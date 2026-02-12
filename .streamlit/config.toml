@@ -1,0 +1,10 @@
+[client]
+showSidebarNavigation = false
+
+[theme]
+base = "light"                        # use Streamlit's light theme as base
+primaryColor = "#4682B4"              # CRT blue – buttons, slider accents, etc.
+backgroundColor = "#FFFFFF"           # main background
+secondaryBackgroundColor = "#F5F7FB"  # soft cards / containers
+textColor = "#111827"                 # deep grey (not harsh black)
+font = "Nunito"                       # we'll override with Nunito via CSS

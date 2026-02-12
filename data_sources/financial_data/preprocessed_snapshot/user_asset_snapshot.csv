@@ -1,0 +1,33 @@
+Asset Name,Asset Category,File Path
+Gold Futures,commodities_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/commodities_user/Gold Futures Historical Data.csv
+Silver Futures,commodities_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/commodities_user/Silver Futures Historical Data.csv
+Bitcoin,cryptocurrencies_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/cryptocurrencies_user/Bitcoin Historical Data.csv
+Ethereum,cryptocurrencies_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/cryptocurrencies_user/Ethereum Historical Data.csv
+USD_GBP,currencies_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/currencies_user/USD_GBP Historical Data.csv
+EUR_USD,currencies_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/currencies_user/EUR_USD Historical Data.csv
+JD Sports Fashion (JD),equities_constituents_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/equities_constituents_user/JD Sports Fashion (JD) Historical Data.csv
+Coca-Cola,equities_constituents_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/equities_constituents_user/Coca-Cola Stock Price History.csv
+Boeing,equities_constituents_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/equities_constituents_user/Boeing Stock Price History.csv
+Walt Disney,equities_constituents_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/equities_constituents_user/Walt Disney Stock Price History.csv
+Apple,equities_mag7_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/equities_mag7_user/Apple Stock Price History.csv
+Tesla,equities_mag7_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/equities_mag7_user/Tesla Stock Price History.csv
+EWU ETF,etf_countries_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/etf_countries_user/EWU ETF Stock Price History.csv
+EUSA ETF,etf_countries_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/etf_countries_user/EUSA ETF Stock Price History.csv
+SPY ETF,etf_popular_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/etf_popular_user/SPY ETF Stock Price History.csv
+QQQ ETF,etf_popular_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/etf_popular_user/QQQ ETF Stock Price History.csv
+ARKK ETF,etf_popular_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/etf_popular_user/ARKK ETF Stock Price History.csv
+XLF ETF,etf_sectors_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/etf_sectors_user/XLF ETF Stock Price History.csv
+XLK ETF,etf_sectors_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/etf_sectors_user/XLK ETF Stock Price History.csv
+United States 10-Year Bond Yield,long_term_bonds_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/long_term_bonds_user/United States 10-Year Bond Yield Historical Data.csv
+United Kingdom 10-Year Bond Yield,long_term_bonds_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/long_term_bonds_user/United Kingdom 10-Year Bond Yield Historical Data.csv
+United States 2-Year Bond Yield,short_term_bonds_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/short_term_bonds_user/United States 2-Year Bond Yield Historical Data.csv
+United Kingdom 2-Year Bond Yield,short_term_bonds_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/short_term_bonds_user/United Kingdom 2-Year Bond Yield Historical Data.csv
+FTSE 100,market_indices_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/market_indices_user/FTSE 100 Historical Data.csv
+Nasdaq 100,market_indices_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/market_indices_user/Nasdaq 100 Historical Data.csv
+US Dollar Index,market_indices_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/market_indices_user/US Dollar Index Historical Data.csv
+S&P 500,market_indices_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/market_indices_user/S&P 500 Historical Data.csv
+Euro Stoxx 50,market_indices_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/market_indices_user/Euro Stoxx 50 Historical Data.csv
+MSCI World,market_indices_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/market_indices_user/MSCI World Historical Data.csv
+US Small Cap 2000,market_indices_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/market_indices_user/US Small Cap 2000 Historical Data.csv
+CBOE Volatility Index,market_indices_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/market_indices_user/CBOE Volatility Index Historical Data.csv
+Dow Jones Industrial Average,market_indices_user,/Users/darrenblake/FinTechWorkspace/financial-insight-tools-1/apps/data_sources/financial_data/market_indices_user/Dow Jones Industrial Average Historical Data.csv

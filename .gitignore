@@ -1,0 +1,36 @@
+# ----------------------------
+# Python bytecode
+# ----------------------------
+__pycache__/
+*.py[cod]
+
+# ----------------------------
+# macOS
+# ----------------------------
+.DS_Store
+
+# ----------------------------
+# Virtual environments
+# ----------------------------
+env/
+venv/
+.venv/
+
+# ----------------------------
+# Streamlit
+# ----------------------------
+# Streamlit secrets anywhere in the repo
+**/.streamlit/secrets.toml
+
+
+# ----------------------------
+# Local data / exports (optional)
+# ----------------------------
+data/local/
+data/user_overrides/
+
+# ----------------------------
+# IDE
+# ----------------------------
+.vscode/
+.idea/
