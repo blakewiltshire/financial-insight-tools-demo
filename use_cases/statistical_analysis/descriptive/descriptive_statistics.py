@@ -507,24 +507,22 @@ def create_boxplot(processed_df, column, hide_outliers):
     q3 = processed_df[column].quantile(0.75)
     iqr = q3 - q1
 
-    # Define the lower and upper bounds for filtering based on IQR
     lower_bound = q1 - 1.5 * iqr
     upper_bound = q3 + 1.5 * iqr
-
-    # Define the filtering condition based on IQR to remove outliers
     filter_condition = (processed_df[column] >= lower_bound) & (processed_df[column] <= upper_bound)
 
-    # Apply filtering if 'hide_outliers' is True
+    # Always operate on a copy before adding columns (prevents SettingWithCopyWarning)
     if hide_outliers:
-        processed_df = processed_df.loc[filter_condition].copy()  # Use .copy() to avoid warning
+        processed_df = processed_df.loc[filter_condition].copy()
+    else:
+        processed_df = processed_df.copy()
 
     # Add a constant column to the dataframe to serve as the x-axis for the boxplot
-    processed_df["box"] = "Boxplot"
+    processed_df.loc[:, "box"] = "Boxplot"
 
-    # Create the boxplot using Altair, encoding the column values for the y-axis
     boxplot = alt.Chart(processed_df).mark_boxplot().encode(
-        x='box:N',  # Nominal encoding for the x-axis, as we are displaying a single category
-        y=f'{column}:Q'  # Quantitative encoding for the y-axis (the column being visualized)
+        x="box:N",
+        y=f"{column}:Q",
     )
 
     return boxplot

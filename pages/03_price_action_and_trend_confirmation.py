@@ -46,6 +46,9 @@ from core.helpers_1 import (  # pylint: disable=import-error
     get_named_paths,
 )
 
+from helpers.aggrid_style import AGGRID_NUNITO_CSS
+
+
 # -------------------------------------------------------------------------------------------------
 # Resolve Key Paths for This Module
 #
@@ -686,8 +689,14 @@ for tab, timeframe, data_slice, tab_key in [
             gb = GridOptionsBuilder.from_dataframe(summary_df)
             gb.configure_default_column(wrapText=True, autoHeight=True)
             gb.configure_grid_options(domLayout='autoHeight')
-            AgGrid(summary_df.copy(), gridOptions=gb.build(), height=500, fit_columns_on_grid_load=True,
-                key=f'confirmation_grid_{timeframe}')
+            AgGrid(
+                summary_df.copy(),
+                gridOptions=gb.build(),
+                height=500,
+                fit_columns_on_grid_load=True,
+                custom_css=AGGRID_NUNITO_CSS,
+                key=f"confirmation_grid_{timeframe}",
+            )
 
 
         with tab1b:
@@ -700,8 +709,14 @@ for tab, timeframe, data_slice, tab_key in [
                 gb_red_flags = GridOptionsBuilder.from_dataframe(red_flags)
                 gb_red_flags.configure_default_column(wrapText=True, autoHeight=True)
                 gb_red_flags.configure_grid_options(domLayout='autoHeight')
-                AgGrid(red_flags, gridOptions=gb_red_flags.build(), height=500,
-                fit_columns_on_grid_load=True, key=f'red_flags_grid_{timeframe}')
+                AgGrid(
+                    red_flags.copy(),
+                    gridOptions=gb_red_flags.build(),
+                    height=500,
+                    fit_columns_on_grid_load=True,
+                    custom_css=AGGRID_NUNITO_CSS,
+                    key=f"red_flags_grid_{timeframe}",
+                )
             else:
                 st.success("✅ No major red flags detected.")
 
