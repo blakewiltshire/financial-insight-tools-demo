@@ -686,12 +686,15 @@ for tab, timeframe, data_slice, tab_key in [
             gb = GridOptionsBuilder.from_dataframe(summary_df)
             gb.configure_default_column(wrapText=True, autoHeight=True)
             gb.configure_grid_options(domLayout='autoHeight')
-            AgGrid(summary_df, gridOptions=gb.build(), height=500, fit_columns_on_grid_load=True,
-            key=f'confirmation_grid_{timeframe}')
+            AgGrid(summary_df.copy(), gridOptions=gb.build(), height=500, fit_columns_on_grid_load=True,
+                key=f'confirmation_grid_{timeframe}')
+
 
         with tab1b:
             st.subheader("⚠️ Red Flags")
-            red_flags = summary_df[summary_df["Confirmation"].str.contains("⚠️", na=False)]
+            red_flags = summary_df.loc[
+                summary_df["Confirmation"].str.contains("⚠️", na=False)
+            ].copy()
             if not red_flags.empty:
                 st.warning("🚨 Potential Issues Detected")
                 gb_red_flags = GridOptionsBuilder.from_dataframe(red_flags)
