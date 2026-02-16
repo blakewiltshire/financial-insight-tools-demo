@@ -43,7 +43,7 @@ All outputs are exploratory and structural in nature.
 
 ## Python Version
 
-Python 3.11–3.12 (tested on 3.12.x)
+Python (tested on 3.12.x)
 
 ---
 
