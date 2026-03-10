@@ -4,6 +4,5 @@ This Streamlit instance is a lightweight public demo of **Financial Insight Tool
 The full FIT environment extends beyond the modules shown here.
 
 - [🔗 Source Code (full suite)](https://github.com/blakewiltshire/financial-insight-tools)
-- [🌐 Official Website](https://www.blakewiltshire.com)
+- [🌐 Official Website](https://blakewiltshire.com)
 - [☕ Support the Project](https://buymeacoffee.com/blakewiltshire)
-- [📩 Contact](https://www.blakewiltshire.com/contact)

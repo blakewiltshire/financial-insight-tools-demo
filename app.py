@@ -188,7 +188,7 @@ examination of economics and finance as interconnected systems shaped by institu
 coordination mechanisms, and technological change.
 
 Further context:
-**www.blakewiltshire.com**
+**https://blakewiltshire.com**
         """
     )
 

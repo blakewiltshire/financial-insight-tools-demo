@@ -218,7 +218,7 @@ FIT aligns with the architectural concepts presented in the *Navigating the Worl
 The full Financial Insight Tools environment extends beyond this demo into macroeconomic exploration, cross-asset mapping, structured observation capture, and AI-ready export workflows.
 
 Further context:  
-www.blakewiltshire.com
+https://blakewiltshire.com
 
 
 ---
