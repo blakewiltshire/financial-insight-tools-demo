@@ -375,12 +375,12 @@ st.markdown(f"""
 # -------------------------------------------------------------------------------------------------
 if data_source in ["Preloaded Asset Types (Default)", "Preloaded Asset Types (User)"]:
     overview_tab0, overview_tab1, overview_tab2, overview_tab3, overview_tab4 = st.tabs(
-        ["🧾 Asset Group Summary", "🧾 Asset Snapshot", "📊 Key Metrics",
-         "📈 ATR & Returns", "🎯 DPT Probability"]
+        ["Asset Group Summary", "Asset Snapshot", "Key Metrics",
+         "ATR & Returns", "DPT Probability"]
     )
 else:
     overview_tab1, overview_tab2, overview_tab3, overview_tab4 = st.tabs(
-        ["🧾 Asset Snapshot", "📊 Key Metrics", "📈 ATR & Returns", "🎯 DPT Probability"]
+        ["Asset Snapshot", "Key Metrics", "ATR & Returns", "DPT Probability"]
     )
 
 # -------------------------------------------------------------------------------------------------
