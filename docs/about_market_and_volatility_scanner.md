@@ -1,4 +1,4 @@
-### 📖 What is this app about?
+## What is this app about?
 
 The **Market & Volatility Scanner** module provides a multi-layered scan of asset conditions, focusing on volatility, statistical outliers, and return distribution diagnostics. It is designed to flag assets exhibiting unusual market behaviour or signal properties relevant to structured trade planning.
 

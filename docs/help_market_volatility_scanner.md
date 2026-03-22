@@ -1,4 +1,4 @@
-### How to Interpret Statistical Analysis Results
+## How to Interpret Statistical Analysis Results
 
 The **Statistical Analysis** module within the Market & Volatility Scanner presents a rich, multidimensional profile of the selected asset. It surfaces descriptive properties, performance metrics, risk-adjusted measures, and intermarket relationships to help identify noteworthy conditions or structural anomalies — not to issue direct signals.
 
@@ -119,5 +119,3 @@ Enables quick diagnostic through visual overlays.
 ### ⚠️ No investment advice or recommendations are provided
 
 This module supports structured planning and diagnostic exploration. Interpretive judgement, scenario assumptions, and execution decisions remain the responsibility of the end user. No trading signals or investment recommendations are produced by this system.
-
----

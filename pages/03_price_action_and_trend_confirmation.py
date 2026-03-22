@@ -154,7 +154,7 @@ st.caption("*Analyse candlestick patterns, breakout zones, and directional flow.
 # Load About Markdown (auto-skips if not replaced)
 # -------------------------------------------------------------------------------------------------
 
-with st.expander("📌 What is this app about?"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)

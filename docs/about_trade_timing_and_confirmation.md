@@ -1,4 +1,4 @@
-### 📖 What is this app about?
+## What is this app about?
 
 The **Trade Timing & Confirmation** module evaluates technical alignment prior to trade initiation. It assesses confluence between price action, momentum signals, and trend consistency to support structurally disciplined entry decisions.
 

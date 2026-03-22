@@ -134,7 +134,7 @@ st.caption("*Evaluate breakout potential, trend strength, and institutional sent
 # -------------------------------------------------------------------------------------------------
 # Load About Markdown (auto-skips if not replaced)
 # -------------------------------------------------------------------------------------------------
-with st.expander("📖 About This App"):
+with st.expander("ℹ️ About This App"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
