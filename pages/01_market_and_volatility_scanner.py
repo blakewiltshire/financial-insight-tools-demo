@@ -235,7 +235,7 @@ st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 # # -------------------------------------------------------------------------------------------------
 # # Asset Selection Logic (Preloaded + User Upload)
 # # -------------------------------------------------------------------------------------------------
-st.sidebar.title('🔎 Select Asset')
+st.sidebar.title('Select Asset')
 
 # --- Uploaded Asset Defaults ---
 UPLOADED_FILE = None
@@ -442,7 +442,7 @@ if data_source in ["Preloaded Asset Types (Default)", "Preloaded Asset Types (Us
 
 # --- Asset Snapshot ---
 with overview_tab1:
-    st.subheader("🧾 Asset Snapshot")
+    st.subheader("Asset Snapshot")
     st.markdown(f"""
     **Current Data Set**: {DATA_TITLE}<br>
     **Asset Type**: {asset_type_display}<br>
@@ -461,7 +461,7 @@ with overview_tab1:
 
 # --- Key Metrics ---
 with overview_tab2:
-    st.subheader("📊 Key Metrics")
+    st.subheader("Key Metrics")
     try:
         std_dev, mean_high_to_low_range = overview_metrics(processed_df, timeline)
 
@@ -477,7 +477,7 @@ with overview_tab2:
 
 # --- ATR & Returns ---
 with overview_tab3:
-    st.subheader("📈 ATR & Returns")
+    st.subheader("ATR & Returns")
     try:
         # ATR
         daily_atr_pct, weekly_atr_pct, monthly_atr_pct, \
@@ -510,7 +510,7 @@ with overview_tab3:
 
 # --- DPT Probability ---
 with overview_tab4:
-    st.subheader("🎯 Probability of Hitting DPT")
+    st.subheader("Probability of Hitting DPT")
 
     st.markdown(f"**Selected DPT**: {desired_profit_target:.1f}%")
     column_map = {

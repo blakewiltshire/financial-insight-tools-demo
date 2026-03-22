@@ -186,7 +186,7 @@ st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 # -------------------------------------------------------------------------------------------------
 # Asset Selection
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title('🔎 Select Asset for Price Action')
+st.sidebar.title('Select Asset for Price Action')
 
 # --- Uploaded Asset Defaults ---
 UPLOADED_FILE = None
@@ -245,7 +245,7 @@ except KeyError as e:
 # Applies to 📈 Full Data (Filtered) Chart, Confirmation and Readiness Summary
 # Temporal & Event-Based Filters are not available
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("📅 Select Date Range")
+st.sidebar.title("Select Date Range")
 
 st.sidebar.caption(
     "⚠️ Only date range filtering is applied here. For seasonal or event-based exploration, "
@@ -293,7 +293,7 @@ default_periods = {
 # -------------------------------------------------------------------------------------------------
 # Sidebar Use Case Selection
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title("📌 Select a Use Case")
+st.sidebar.title("Select a Use Case")
 
 selected_use_case = st.sidebar.selectbox(
     "Select a predefined Use Case",
@@ -339,13 +339,13 @@ indicator_timeframes = {
 timeframes = ["Daily", "Weekly", "Monthly"]
 
 # Sidebar: Price Action Selection
-st.sidebar.title("📊 Customise Price Action Parameters")
+st.sidebar.title("Customise Price Action Parameters")
 
 selected_indicators = {}
 indicator_params = {}
 
 for category, indicators in indicator_categories.items():
-    with st.sidebar.expander(f"📌 {category}"):
+    with st.sidebar.expander(f"{category}"):
 
         # Auto-select indicators if a Use Case is chosen
         default_selection = auto_selected_indicators.get(category, [])
@@ -552,7 +552,7 @@ if filtered_df is not None:
     summary_df, timeframe_summary = compute_execution_readiness(filtered_df, predisposition,
      selected_indicators)
 
-    st.subheader("📊 Execution Readiness Summary")
+    st.subheader("Execution Readiness Summary")
     st.write(f"Evaluating **{DATA_TITLE}** for execution readiness.")
 
     timeframe_table = pd.DataFrame(
@@ -560,7 +560,7 @@ if filtered_df is not None:
             status in timeframe_summary.items()]
         )
 
-st.subheader("📈 Timeframe Execution Readiness")
+st.subheader("Timeframe Execution Readiness")
 st.dataframe(timeframe_table)
 
 # **Detect Support & Resistance Levels & Align with Predisposition**
@@ -612,9 +612,9 @@ tab1, tab2, tab3 = st.tabs(["📉 Short-Term (50 Days)",
 "📊 Medium-Term (200 Days)", "📈 Full Data (Filtered)"])
 
 for tab, timeframe, data_slice, tab_key in [
-    (tab1, "📉 Short-Term (50 Days)", filtered_df.tail(50), "short"),
-    (tab2, "📊 Medium-Term (200 Days)", filtered_df.tail(200), "medium"),
-    (tab3, "📈 Full Data (Filtered)", filtered_df, "full")
+    (tab1, "Short-Term (50 Days)", filtered_df.tail(50), "short"),
+    (tab2, "Medium-Term (200 Days)", filtered_df.tail(200), "medium"),
+    (tab3, "Full Data (Filtered)", filtered_df, "full")
 ]:
     with tab:
         st.subheader(timeframe)
@@ -685,7 +685,7 @@ for tab, timeframe, data_slice, tab_key in [
         tab1a, tab1b = st.tabs(["🔍 Price Action Confirmation", "⚠️ Red Flags"])
 
         with tab1a:
-            st.subheader("🔍 Price Action Confirmation")
+            st.subheader("Price Action Confirmation")
             gb = GridOptionsBuilder.from_dataframe(summary_df)
             gb.configure_default_column(wrapText=True, autoHeight=True)
             gb.configure_grid_options(domLayout='autoHeight')
@@ -700,7 +700,7 @@ for tab, timeframe, data_slice, tab_key in [
 
 
         with tab1b:
-            st.subheader("⚠️ Red Flags")
+            st.subheader("Red Flags")
             red_flags = summary_df.loc[
                 summary_df["Confirmation"].str.contains("⚠️", na=False)
             ].copy()

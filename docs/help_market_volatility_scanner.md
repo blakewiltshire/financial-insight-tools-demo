@@ -1,4 +1,4 @@
-### 📊 How to Interpret Statistical Analysis Results
+### How to Interpret Statistical Analysis Results
 
 The **Statistical Analysis** module within the Market & Volatility Scanner presents a rich, multidimensional profile of the selected asset. It surfaces descriptive properties, performance metrics, risk-adjusted measures, and intermarket relationships to help identify noteworthy conditions or structural anomalies — not to issue direct signals.
 
@@ -12,7 +12,7 @@ Below is a breakdown of the analysis sections available:
 
 ---
 
-### 🧮 Descriptive Statistics
+### Descriptive Statistics
 
 These establish the foundational distributional properties of the asset’s return and price behaviour.
 
@@ -39,7 +39,7 @@ These modules translate market behaviour into uncertainty-adjusted outcomes.
 
 ---
 
-### 📊 Market Dynamics
+### Market Dynamics
 
 These track evolving volatility and intra-asset behaviour.
 
@@ -50,17 +50,17 @@ These track evolving volatility and intra-asset behaviour.
 
 ---
 
-### 📈 Performance Metrics & Correlations
+### Performance Metrics & Correlations
 
 This area dissects how the asset has performed historically and in relation to key macro groupings.
 
-#### 📉 Performance Analysis
+#### Performance Analysis
 
 - **Annualised Return**, **Maximum Drawdown**, **Volatility-Adjusted Return**, **Return on Investment (ROI)**, **Volume vs ATR Correlation**.
 
 📌 *Use Case*: Evaluate total return characteristics, peak losses, and volume-led movement.
 
-#### 🔗 Correlation & Causation Analysis
+#### Correlation & Causation Analysis
 
 Examines historical relationships with external asset groups.
 
@@ -73,7 +73,7 @@ Examines historical relationships with external asset groups.
 
 ---
 
-### 🌪 Volatility & Opportunity Mapping
+### Volatility & Opportunity Mapping
 
 These modules extend correlation logic into volatility space — mapping the co-behaviour of uncertainty.
 
@@ -83,15 +83,15 @@ These modules extend correlation logic into volatility space — mapping the co-
 
 ---
 
-### 📉 Data Visualisation Panels
+### Data Visualisation Panels
 
 Enables quick diagnostic through visual overlays.
 
-#### 📌 Price Movement & Trend
+#### Price Movement & Trend
 
 - **Line**, **Candlestick**, and **Trend (Area)** views to inspect recent price dynamics.
 
-#### 📈 Returns
+#### Returns
 
 - **Returns with...** (by group) — tracks performance alignment.
 - **Cumulative Returns**, **Rolling Returns** — explore compounding and momentum.
@@ -105,7 +105,7 @@ Enables quick diagnostic through visual overlays.
 
 ---
 
-### 🧠 Interpretation Summary
+### Interpretation Summary
 
 - These metrics are **not recommendations**.
 - They support **framing, filtering, and hypothesis generation**.
