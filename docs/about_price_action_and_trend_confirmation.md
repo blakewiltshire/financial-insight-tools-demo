@@ -1,4 +1,4 @@
-## What is this app about?
+## Price Action & Trend Confirmation
 
 The **Price Action & Trend Confirmation** module analyses the technical structure of an asset's recent behaviour. It identifies breakout zones, trend strength, and potential reversal points to validate trade scenarios under consideration.
 
