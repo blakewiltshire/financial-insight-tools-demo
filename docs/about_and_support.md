@@ -1,4 +1,4 @@
-# ℹ️ About & Support
+## About & Support
 
 This Streamlit instance is a lightweight public demo of **Financial Insight Tools (FIT)**.
 The full FIT environment extends beyond the modules shown here.
