@@ -621,7 +621,7 @@ for tab, timeframe, data_slice, tab_key in [
 
         # **Naked Charts**
         if selected_use_case == "Naked Charts":
-            st.subheader("📉 Naked Chart (Price Only)")
+            st.subheader("Naked Chart (Price Only)")
             st.plotly_chart(
             plot_naked_chart(
             data_slice), width='stretch',
@@ -630,7 +630,7 @@ for tab, timeframe, data_slice, tab_key in [
         #  **Performance Charts**
         performance_indicators = selected_indicators.get("Performance", [])
         if performance_indicators:
-            st.subheader("📊 Performance Breakdown")
+            st.subheader("Performance Breakdown")
             if "Winning vs. Losing" in performance_indicators:
                 period = indicator_params.get("Winning vs. Losing", 14)
                 st.plotly_chart(
@@ -655,23 +655,23 @@ for tab, timeframe, data_slice, tab_key in [
         #  **Trend & Momentum Chart**
         trend_indicators = selected_indicators.get("Trend & Momentum", [])
         if trend_indicators:
-            st.subheader("📊 Trend & Momentum Analysis")
+            st.subheader("Trend & Momentum Analysis")
             st.plotly_chart(create_price_action_chart(data_slice, trend_indicators, indicator_params), width='stretch', key=f"trend_chart_{tab_key}")
 
             if "Volume-Based Confirmation" in trend_indicators:
                 period = indicator_params.get("Volume-Based Confirmation", 14)
-                st.subheader("📊 Volume-Based Confirmation")
+                st.subheader("Volume-Based Confirmation")
                 st.plotly_chart(plot_volume_based_confirmation(data_slice, period), width='stretch', key=f"volume_conf_{tab_key}_{period}")
 
         #  **Breakout & Mean Reversion Chart**
         breakout_indicators = selected_indicators.get("Breakout & Mean Reversion", [])
         if breakout_indicators:
-            st.subheader("📊 Breakout & Mean Reversion")
+            st.subheader("Breakout & Mean Reversion")
             st.plotly_chart(plot_breakout_mean_reversion_chart(data_slice, breakout_indicators, indicator_params), width='stretch', key=f"breakout_chart_{tab_key}")
 
         if "Volume vs. Price Range Compression" in breakout_indicators:
             period = indicator_params.get("Volume vs. Price Range Compression", 20)
-            st.subheader("📊 Volume vs. Price Compression")
+            st.subheader("Volume vs. Price Compression")
             st.plotly_chart(
                 plot_volume_price_range_compression(data_slice, breakout_indicators, period),
                 width='stretch',
