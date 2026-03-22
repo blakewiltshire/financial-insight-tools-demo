@@ -14,5 +14,3 @@ Outputs are compatible with downstream modules for timing confirmation, trade se
 ### ⚠️ No investment advice or recommendations are provided
 
 This module supports structured planning and diagnostic exploration. Interpretive judgement, scenario assumptions, and execution decisions remain the responsibility of the end user. No trading signals or investment recommendations are produced by this system.
-
----
