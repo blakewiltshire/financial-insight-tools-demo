@@ -109,11 +109,13 @@ http://localhost:8501
 
 ## Screenshots
 
+---
+
 ### 1. Financial Insight Tools Demo — Overview
 
 ![FIT Demo Overview](docs/screenshots/01-demo-overview.png)
 
-The demo homepage provides structural orientation and module navigation within the Trade & Portfolio Structuring workflow.
+The demo homepage establishes structural orientation and module navigation within the Trade & Portfolio Structuring workflow.
 
 ---
 
@@ -121,14 +123,14 @@ The demo homepage provides structural orientation and module navigation within t
 
 ![Market and Volatility Scanner](docs/screenshots/02-market-volatility.png)
 
-The scanner surfaces:
+A structural view across market behaviour and volatility conditions:
 
 - Return distribution structure  
 - Dispersion characteristics  
 - Volatility context  
 - Regime-sensitive framing  
 
-This module provides quantitative grounding for downstream analysis.
+Provides quantitative grounding for downstream analysis.
 
 ---
 
@@ -136,12 +138,12 @@ This module provides quantitative grounding for downstream analysis.
 
 ![Trade Timing and Confirmation](docs/screenshots/03-trade-timing.png)
 
-This module examines:
+A structured view across timing and confirmation layers:
 
 - Timeframe alignment  
 - Confirmation layers  
-- Structured entry logic  
-- Context-aware trade framing  
+- Entry structure  
+- Context-aware framing  
 
 No automated execution or signal generation is performed.
 
@@ -151,7 +153,7 @@ No automated execution or signal generation is performed.
 
 ![Price Action and Trend Confirmation](docs/screenshots/04-price-action.png)
 
-Price behaviour and directional context are examined through:
+A structural view across price behaviour and directional context:
 
 - Trend structure  
 - Momentum framing  
