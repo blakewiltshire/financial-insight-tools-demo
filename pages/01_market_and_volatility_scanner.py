@@ -201,7 +201,7 @@ from data_sources.financial_data.filtering_options import filtering_options_map
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Market & Volatility Scanner", layout="wide")
-st.title('🔎 Market & Volatility Scanner')
+st.title('Market & Volatility Scanner')
 st.caption("*Assess asset-specific volatility patterns, return probabilities, and time filters.*")
 
 # -------------------------------------------------------------------------------------------------

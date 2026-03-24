@@ -147,7 +147,7 @@ keys = {
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Price Action & Trend Confirmation", layout="wide")
-st.title("📊 Price Action & Trend Confirmation")
+st.title("Price Action & Trend Confirmation")
 st.caption("*Analyse candlestick patterns, breakout zones, and directional flow.*")
 
 # -------------------------------------------------------------------------------------------------
@@ -608,8 +608,8 @@ def detect_support_resistance(df, predisposition):
 
 
 # **Tabs for Short, Medium, Full Data Views**
-tab1, tab2, tab3 = st.tabs(["📉 Short-Term (50 Days)",
-"📊 Medium-Term (200 Days)", "📈 Full Data (Filtered)"])
+tab1, tab2, tab3 = st.tabs(["Short-Term (50 Days)",
+"Medium-Term (200 Days)", "Full Data (Filtered)"])
 
 for tab, timeframe, data_slice, tab_key in [
     (tab1, "Short-Term (50 Days)", filtered_df.tail(50), "short"),

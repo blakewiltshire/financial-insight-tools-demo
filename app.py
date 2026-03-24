@@ -85,20 +85,17 @@ def _render_sidebar(paths: Dict[str, str]) -> None:
 
     st.sidebar.page_link(
         "pages/01_market_and_volatility_scanner.py",
-        label="Market & Volatility Scanner",
-        icon="🔎",
+        label="Market & Volatility Scanner"
     )
 
     st.sidebar.page_link(
         "pages/02_trade_timing_and_confirmation.py",
-        label="Trade Timing & Confirmation",
-        icon="⏳",
+        label="Trade Timing & Confirmation"
     )
 
     st.sidebar.page_link(
         "pages/03_price_action_and_trend_confirmation.py",
-        label="Price Action & Trend Confirmation",
-        icon="📊",
+        label="Price Action & Trend Confirmation"
     )
 
     st.sidebar.divider()
@@ -141,13 +138,13 @@ def _render_capabilities_block() -> None:
         """
 The modules are designed to be used together as a structured sequence:
 
-- **🔎 Market & Volatility Scanner**
+- **Market & Volatility Scanner**
   Surface distribution structure, dispersion patterns, and volatility context.
 
-- **⏳ Trade Timing & Confirmation**
+- **Trade Timing & Confirmation**
   Assess timing alignment across timeframes and technical confirmation layers.
 
-- **📊 Price Action & Trend Confirmation**
+- **Price Action & Trend Confirmation**
   Reinforce directional logic through structured price action and momentum framing.
 
 Outputs are exploratory and interpretive.

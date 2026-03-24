@@ -128,7 +128,7 @@ from data_sources.financial_data.filtering_options import filtering_options_map
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Trade Timing & Confirmation", layout="wide")
-st.title('⏳ Trade Timing & Confirmation')
+st.title('Trade Timing & Confirmation')
 st.caption("*Evaluate breakout potential, trend strength, and institutional sentiment.*")
 
 # -------------------------------------------------------------------------------------------------
@@ -557,9 +557,9 @@ def detect_support_resistance(df, predisposition):
 
 # **Tabs for Short, Medium, Full Data Views**
 tab1, tab2, tab3 = st.tabs([
-    "📉 Short-Term (50 Days)",
-    "📊 Medium-Term (200 Days)",
-    "📈 Full Data (Filtered)"
+    "Short-Term (50 Days)",
+    "Medium-Term (200 Days)",
+    "Full Data (Filtered)"
 ])
 
 # **Loop Through All Timeframes**
