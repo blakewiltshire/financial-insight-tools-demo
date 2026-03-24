@@ -249,7 +249,7 @@ st.sidebar.title("Select Date Range")
 
 st.sidebar.caption(
     "⚠️ Only date range filtering is applied here. For seasonal or event-based exploration, "
-    "use the 🔎 Market & Volatility Scanner."
+    "use the Market & Volatility Scanner."
 )
 
 filter_type = "Range" # (Remove Temporal & Event-Based Filters)
