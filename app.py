@@ -1,10 +1,10 @@
 """
-Financial Insight Tools Demo (FIT-Demo)
+Financial Insight Tools Preview (FIT)
 
-This is a lightweight public demo build of the Financial Insight Tools environment.
-It provides a focused subset of the Trade & Portfolio Structuring workflow using a
-small set of preloaded assets (Mag 7) and the same structural scaffolding as the
-full suite.
+This is a focused public preview of the Financial Insight Tools environment.
+It provides a contained view of the Trade & Portfolio Structuring workflow using
+a small set of preloaded assets (Mag 7) and the same structural scaffolding as
+the full suite.
 
 No trading, investment, or policy advice is provided.
 """
@@ -24,6 +24,7 @@ from core.helpers import (  # pylint: disable=import-error
 from core.theme import inject_global_styles
 
 inject_global_styles()
+
 
 def _get_paths(current_file: str) -> Dict[str, str]:
     """
@@ -46,9 +47,7 @@ def _get_paths(current_file: str) -> Dict[str, str]:
     return {
         "root": root_path,
         "brand_logo": os.path.join(root_path, "brand", "blake_logo.png"),
-        # Sidebar image (e.g., grouping / overview visual)
         "sidebar_image": os.path.join(root_path, "images", "fit.png"),
-        # About & Support
         "about_support_md": os.path.join(root_path, "docs", "about_and_support.md"),
     }
 
@@ -56,8 +55,6 @@ def _get_paths(current_file: str) -> Dict[str, str]:
 # -------------------------------------------------------------------------------------------------
 # Sidebar
 # -------------------------------------------------------------------------------------------------
-
-
 def _render_sidebar(paths: Dict[str, str]) -> None:
     """
     Render a structured sidebar navigation using Streamlit's modern
@@ -67,20 +64,15 @@ def _render_sidebar(paths: Dict[str, str]) -> None:
     sidebar_image = paths["sidebar_image"]
     about_support_md = paths["about_support_md"]
 
-    # Branding
     if os.path.isfile(brand_logo):
         st.logo(brand_logo)
 
-    # Optional sidebar image
     if os.path.isfile(sidebar_image):
         st.sidebar.image(sidebar_image, width="stretch")
 
-    # ---------------------------
-    # Demo Navigation
-    # ---------------------------
-    st.sidebar.title("Demo Modules")
+    st.sidebar.title("Preview Modules")
     st.sidebar.caption(
-        "A focused subset of the Trade & Portfolio Structuring workflow."
+        "A focused Trade & Portfolio Structuring workflow from the broader FIT environment."
     )
 
     st.sidebar.page_link(
@@ -100,7 +92,6 @@ def _render_sidebar(paths: Dict[str, str]) -> None:
 
     st.sidebar.divider()
 
-    # --- About & Support ---
     with st.sidebar.expander("ℹ️ About & Support"):
         support_md = load_markdown_file(about_support_md)
         if support_md:
@@ -108,30 +99,34 @@ def _render_sidebar(paths: Dict[str, str]) -> None:
         else:
             st.warning("Support information not available.")
 
+
 # -------------------------------------------------------------------------------------------------
 # Main content helpers
 # -------------------------------------------------------------------------------------------------
-
 def _render_intro_block() -> None:
     """
     Intro / orientation.
     """
     st.write(
         """
-This Streamlit instance is a lightweight public demonstration of **Financial Insight Tools (FIT)** —
+This Streamlit instance is a focused public preview of **Financial Insight Tools (FIT)** —
 a modular research environment for exploring market structure through consistent analytical scaffolding.
 
-The demo centres on a focused workflow: **Trade & Portfolio Structuring**.
+The preview centres on one operational layer: **Trade & Portfolio Structuring**.
 Three integrated modules are available in the sidebar, supported by a curated asset set (Mag 7)
 to ensure fast, stable performance in Streamlit Cloud.
+
+The purpose is to show how FIT structures market inspection, confirmation, and contextual reasoning
+without exposing the full production architecture.
 
 **No brokerage integration, no automated execution, and no investment recommendations are provided.**
         """
     )
 
+
 def _render_capabilities_block() -> None:
     """
-    What the demo brings into view.
+    What the preview brings into view.
     """
     st.markdown("### The Workflow in View")
     st.write(
@@ -148,22 +143,28 @@ The modules are designed to be used together as a structured sequence:
   Reinforce directional logic through structured price action and momentum framing.
 
 Outputs are exploratory and interpretive.
+
 The purpose is structured reasoning — not signal generation.
         """
     )
+
 
 def _render_scope_block() -> None:
     """
     Scope and limits.
     """
-    st.markdown("### What This Demo Includes")
+    st.markdown("### What This Preview Includes")
     st.write(
         """
 - Three Trade & Portfolio Structuring modules
 - A small preloaded dataset (Magnificent 7)
 - A streamlined interface representative of the broader environment
+
+This preview is intentionally contained to preserve clarity, speed, and accessibility while maintaining
+the same structural principles used across the full FIT suite.
         """
     )
+
 
 def _render_structure_block() -> None:
     """
@@ -172,17 +173,32 @@ def _render_structure_block() -> None:
     st.markdown("### The Broader Environment")
     st.write(
         """
-The full **Financial Insight Tools** suite extends beyond this demo into:
+The full **Financial Insight Tools (FIT)** suite extends beyond this preview into a broader research
+environment built around connected analytical layers rather than isolated tools.
 
-- Macroeconomic exploration and country indicator systems
-- Cross-asset and thematic correlation mapping
-- Portfolio monitoring and structured trade review
-- Supporting calculators and risk diagnostics
-- Observation capture and AI-ready export workflows
+The system begins with **Economic Exploration**, where macroeconomic conditions, country indicators,
+and thematic structures establish the system foundation.
 
-FIT aligns with the **Navigating the World of Economics, Finance, and Markets** guide series — a structured
-examination of economics and finance as interconnected systems shaped by institutions, incentives,
-coordination mechanisms, and technological change.
+This extends into **Thematic Correlation** and **Relative Macro Transmission**, where relationships,
+exogenous differentials, and regime divergence can be examined across countries, markets, and policy
+environments.
+
+**Positioning & Crowding** adds the participant behaviour layer, supporting review of leveraged
+positioning, percentile extremes, and positioning turns across core futures markets.
+
+The Trade & Portfolio Structuring modules then apply this context through:
+
+- distribution and volatility analysis
+- timing and confirmation frameworks
+- price action and trend structure
+- scenario modelling and trade construction
+
+Supporting calculators, portfolio monitoring workflows, structured observation capture, and AI-ready
+export bundles complete the broader environment.
+
+FIT aligns with the **Navigating the World of Economics, Finance, and Markets** guide series — a
+structured examination of economics and finance as interconnected systems shaped by institutions,
+incentives, coordination mechanisms, and technological change.
 
 Further context:
 **https://blakewiltshire.com**
@@ -204,27 +220,23 @@ def _render_footer() -> None:
 # -------------------------------------------------------------------------------------------------
 # Main entry point
 # -------------------------------------------------------------------------------------------------
-
-
 def main() -> None:
     """
-    Entrypoint for the FIT Demo Streamlit home page.
+    Entrypoint for the FIT public preview Streamlit home page.
 
     This function configures the Streamlit page, resolves filesystem paths,
     and renders the main layout components.
     """
     st.set_page_config(
-        page_title="Financial Insight Tools Demo (FIT-Demo)",
+        page_title="Financial Insight Tools Preview",
         layout="wide",
     )
 
     paths = _get_paths(__file__)
 
-    # Sidebar content
     _render_sidebar(paths)
 
-    # Header
-    st.title("Financial Insight Tools Demo")
+    st.title("Financial Insight Tools Preview")
     st.caption(
         "*A focused Trade & Portfolio Structuring workflow using a small preloaded dataset.*"
     )

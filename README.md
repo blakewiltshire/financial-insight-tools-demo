@@ -1,14 +1,14 @@
-# Financial Insight Tools (FIT) — Public Demo
+# Financial Insight Tools (FIT) — Public Preview
 
-Financial Insight Tools (FIT) Demo is a focused Streamlit preview of the Trade & Portfolio Structuring layer within the broader Financial Insight Tools research environment.
+Financial Insight Tools (FIT) Public Preview is a focused Streamlit view of the Trade & Portfolio Structuring layer within the broader Financial Insight Tools research environment.
 
-This repository presents a streamlined subset of the system, designed to demonstrate structural analysis workflows without exposing the full modular architecture.
+This repository presents one contained operational layer of the wider FIT architecture. It demonstrates how structured market analysis can be framed through consistent analytical scaffolding without exposing the full production suite.
 
 ---
 
-## Scope of This Demo
+## Scope of This Preview
 
-The demo includes three integrated modules:
+The preview includes three integrated modules:
 
 - **Market and Volatility Scanner**
 - **Trade Timing and Confirmation**
@@ -16,16 +16,68 @@ The demo includes three integrated modules:
 
 The dataset is restricted to a curated selection of large-cap equities (Magnificent 7) to ensure fast, stable performance.
 
-This demo does not include:
+This preview does not include:
 
-- Cross-asset correlation overlays  
-- User-uploaded datasets  
-- Observation logging  
-- Structured export bundles  
-- Macroeconomic exploration modules  
-- Portfolio registry management  
+- Thematic Correlation
+- Relative Macro Transmission
+- Positioning & Crowding
+- Cross-asset correlation overlays
+- User-uploaded datasets
+- Observation logging
+- Structured export bundles
+- Macroeconomic exploration modules
+- Portfolio registry management
 
 The full FIT suite expands into these domains.
+
+---
+
+## Relationship to the Full FIT Suite
+
+The full Financial Insight Tools environment extends across three connected analytical layers.
+
+### System Foundation
+
+- **Economic Exploration**
+- **Thematic Correlation**
+- **Relative Macro Transmission**
+- **Positioning & Crowding**
+
+These modules frame macro conditions, systemic relationships, transmission pathways, and market participation structure.
+
+---
+
+### Financial Application
+
+- **Market & Volatility Scanner**
+- **Asset Snapshot Generator**
+- **Trade Timing & Confirmation**
+- **Price Action & Trend Confirmation**
+- **Trade Structuring & Risk Planning**
+- **Spread Ratio Insights**
+- **Cross Asset Correlation**
+- **Live Portfolio Monitor**
+
+These modules apply structural context to scenario analysis, portfolio framing, and market inspection.
+
+---
+
+### Utility & Decision Support
+
+- **Kelly Criterion**
+- **VaR Calculator**
+- **Compounding Calculator**
+- **Standard Deviation Calculator**
+- **Historical Data Currency Converter**
+- **Data Cleaner & Inspector**
+- **Observation Capture**
+- **AI-Ready Export Bundles**
+
+These modules support operational consistency, validation, and structured documentation workflows.
+
+This repository provides access to one focused application layer within that broader environment.
+
+It is intentionally limited in scope to preserve clarity, speed, and accessibility while maintaining the same architectural principles used across the full suite.
 
 ---
 
@@ -111,11 +163,11 @@ http://localhost:8501
 
 ---
 
-### 1. Financial Insight Tools Demo — Overview
+### 1. Financial Insight Tools Preview — Overview
 
-![FIT Demo Overview](docs/screenshots/01-demo-overview.png)
+![FIT Preview Overview](docs/screenshots/01-demo-overview.png)
 
-The demo homepage establishes structural orientation and module navigation within the Trade & Portfolio Structuring workflow.
+The preview homepage establishes structural orientation and module navigation within the Trade & Portfolio Structuring workflow.
 
 ---
 
@@ -125,10 +177,10 @@ The demo homepage establishes structural orientation and module navigation withi
 
 A structural view across market behaviour and volatility conditions:
 
-- Return distribution structure  
-- Dispersion characteristics  
-- Volatility context  
-- Regime-sensitive framing  
+- Return distribution structure
+- Dispersion characteristics
+- Volatility context
+- Regime-sensitive framing
 
 Provides quantitative grounding for downstream analysis.
 
@@ -140,10 +192,10 @@ Provides quantitative grounding for downstream analysis.
 
 A structured view across timing and confirmation layers:
 
-- Timeframe alignment  
-- Confirmation layers  
-- Entry structure  
-- Context-aware framing  
+- Timeframe alignment
+- Confirmation layers
+- Entry structure
+- Context-aware framing
 
 No automated execution or signal generation is performed.
 
@@ -155,10 +207,10 @@ No automated execution or signal generation is performed.
 
 A structural view across price behaviour and directional context:
 
-- Trend structure  
-- Momentum framing  
-- Pattern consistency  
-- Regime-aware interpretation  
+- Trend structure
+- Momentum framing
+- Pattern consistency
+- Regime-aware interpretation
 
 Outputs remain exploratory rather than prescriptive.
 
@@ -166,7 +218,7 @@ Outputs remain exploratory rather than prescriptive.
 
 ## Repository Structure
 
-```
+```text
 financial-insight-tools-demo/
   app.py          # Streamlit launcher
   brand/          # Visual assets
@@ -182,21 +234,8 @@ financial-insight-tools-demo/
   README.md
   requirements.txt
 ```
+
 This repository represents a focused preview layer of the broader Financial Insight Tools architecture.
-
----
-
-## Relationship to the Full FIT Suite
-
-The full Financial Insight Tools environment extends beyond this demo into:
-
-- Macroeconomic exploration
-- Cross-asset correlation mapping
-- Portfolio monitoring workflows
-- Structured observation capture
-- AI-ready export bundles
-
-This repository presents a contained view of the Trade & Portfolio Structuring layer.
 
 ---
 
@@ -217,11 +256,10 @@ Financial Insight Tools forms part of a broader independent framework studio exp
 
 FIT aligns with the architectural concepts presented in the *Navigating the World of Economics, Finance, and Markets* series — a multi-volume framework examining economics and finance as interconnected systems shaped by institutions, incentives, coordination mechanisms, and technological change.
 
-The full Financial Insight Tools environment extends beyond this demo into macroeconomic exploration, cross-asset mapping, structured observation capture, and AI-ready export workflows.
+The full Financial Insight Tools environment extends beyond this public preview into macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, cross-asset mapping, structured observation capture, and AI-ready export workflows.
 
 Further context:  
 https://blakewiltshire.com
-
 
 ---
 
