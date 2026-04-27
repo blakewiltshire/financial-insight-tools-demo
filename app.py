@@ -3,8 +3,7 @@ Financial Insight Tools Preview (FIT)
 
 This is a focused public preview of the Financial Insight Tools environment.
 It provides a contained view of the Trade & Portfolio Structuring workflow using
-a small set of preloaded assets (Mag 7) and the same structural scaffolding as
-the full suite.
+a small set of preloaded assets (Mag 7) and the same structural scaffolding as the full suite.
 
 No trading, investment, or policy advice is provided.
 """

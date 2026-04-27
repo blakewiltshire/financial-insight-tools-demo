@@ -87,7 +87,8 @@ It is intentionally limited in scope to preserve clarity, speed, and accessibili
 A structured research environment for exploring market distribution, volatility context, trade timing alignment, and price behaviour using consistent analytical scaffolding.
 
 **Isn’t:**  
-A brokerage platform, automated trading system, advisory service, signal engine, or predictive model. No trade execution or financial advice is provided.
+A brokerage platform, automated trading system, advisory service, signal engine, or predictive model.
+No trade execution or financial advice is provided.
 
 All outputs are exploratory and structural in nature.
 
