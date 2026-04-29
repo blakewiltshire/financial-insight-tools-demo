@@ -535,11 +535,11 @@ def compute_execution_readiness(df, predisposition, selected_indicators):
             continue
 
         # Generate Execution Readiness Summary based on Alignment Ratio
-        if alignment_ratio >= 0.85:  # ✅ Strong Alignment
+        if alignment_ratio >= 0.85:  # Strong Alignment
             timeframe_summary[timeframe] = "✅ Indicators strongly align with detected trends."
-        elif alignment_ratio >= 0.33:  # ✅ If at least one-third of the max score confirms trend
+        elif alignment_ratio >= 0.33:  # If at least one-third of the max score confirms trend
             timeframe_summary[timeframe] = "⚠️ Mixed signals detected."
-        elif alignment_ratio >= -0.20:  # ✅ If trend signals contradict but not entirely
+        elif alignment_ratio >= -0.20:  # If trend signals contradict but not entirely
             timeframe_summary[timeframe] = "⚠️ Some indicators contradict detected trends."
         else:  # If more than 20% are contradicting trend
             timeframe_summary[timeframe] = "🚨 No alignment detected—trends are conflicting."
