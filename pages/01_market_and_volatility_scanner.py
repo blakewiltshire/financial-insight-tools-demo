@@ -221,7 +221,7 @@ with st.expander("ℹ️ About This App"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='Financial Insight Tools Demo')
+st.sidebar.page_link('app.py', label='Financial Insight Tools Preview')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
@@ -435,7 +435,7 @@ if data_source in ["Preloaded Asset Types (Default)", "Preloaded Asset Types (Us
                 else:
                     st.info("No snapshot data found for this group.")
             else:
-                st.info("**Asset Group Summaries are not included in the public demo**.")
+                st.info("**Asset Group Summaries are not included in the public preview**.")
         except Exception as error:
             st.error(f"❌ Could not load snapshot data: {error}")
 
@@ -879,14 +879,14 @@ for header, (options_map, categories) in options_maps.items():
         # Handle each selected option
         for selected_option in all_selected_options:
 
-            # Demo: disable correlation + volatility paths (including user uploads)
+            # Preview: disable correlation + volatility paths (including user uploads)
             DISABLED = {
                 "Correlation with User Uploads",
                 "Volatility with User Uploads",
             }
 
             if selected_option in correlation_mapping or selected_option in volatility_mapping or selected_option in DISABLED:
-                st.info("Correlation and volatility overlays are not included in the public demo.")
+                st.info("Correlation and volatility overlays are not included in the public preview.")
                 continue
 
             # Correlation Options
@@ -1097,9 +1097,9 @@ for header, (options_map, categories) in options_maps.items():
         # Handle Visualisation Options for Data
         for selected_option in all_selected_options:
 
-            # Demo: disable returns overlays & user-upload returns
+            # Preview: disable returns overlays & user-upload returns
             if selected_option in returns_mapping or selected_option == "Returns with User Uploads":
-                st.info("Returns overlays (cross-asset and uploads) are not included in the public demo.")
+                st.info("Returns overlays (cross-asset and uploads) are not included in the public preview.")
                 continue
 
             # Price Movement & Trend Visualisation (only for Range and Event-Driven)

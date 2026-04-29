@@ -1,7 +1,7 @@
 """
 helpers.py
 
-Minimal helper utilities for the FIT Demo.
+Minimal helper utilities for the FIT Preview.
 
 Only the functions actively used across FIT pages are included here:
 - load_markdown_file: safe markdown loader

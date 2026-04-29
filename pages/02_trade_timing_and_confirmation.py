@@ -152,7 +152,7 @@ with st.expander("ℹ️ About This App"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='Financial Insight Tools Demo')
+st.sidebar.page_link('app.py', label='Financial Insight Tools Preview')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 

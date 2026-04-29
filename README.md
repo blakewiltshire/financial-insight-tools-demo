@@ -166,7 +166,7 @@ http://localhost:8501
 
 ### 1. Financial Insight Tools Preview — Overview
 
-![FIT Preview Overview](docs/screenshots/01-demo-overview.png)
+![FIT Preview Overview](docs/screenshots/01-preview-overview.png)
 
 The preview homepage establishes structural orientation and module navigation within the Trade & Portfolio Structuring workflow.
 
