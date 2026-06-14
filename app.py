@@ -185,15 +185,16 @@ environments.
 **Positioning & Crowding** adds the participant behaviour layer, supporting review of leveraged
 positioning, percentile extremes, and positioning turns across core futures markets.
 
-The Trade & Portfolio Structuring modules then apply this context through:
+The **Trade & Portfolio Structuring** modules then apply this context through:
 
 - distribution and volatility analysis
+- company structure review
 - timing and confirmation frameworks
 - price action and trend structure
 - scenario modelling and trade construction
 
-Supporting calculators, portfolio monitoring workflows, structured observation capture, and AI-ready
-export bundles complete the broader environment.
+Supporting calculators, portfolio monitoring workflows, company structure review, structured observation capture,
+and AI-ready export bundles complete the broader environment.
 
 FIT aligns with the **Navigating the World of Economics, Finance, and Markets** guide series — a
 structured examination of economics and finance as interconnected systems shaped by institutions,

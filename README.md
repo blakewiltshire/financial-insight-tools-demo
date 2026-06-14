@@ -18,6 +18,7 @@ The dataset is restricted to a curated selection of large-cap equities (Magnific
 
 This preview does not include:
 
+- Company Structure Review
 - Thematic Correlation
 - Relative Macro Transmission
 - Positioning & Crowding
@@ -27,6 +28,7 @@ This preview does not include:
 - Structured export bundles
 - Macroeconomic exploration modules
 - Portfolio registry management
+- AI Export Bundles
 
 The full FIT suite expands into these domains.
 
@@ -50,6 +52,7 @@ These modules frame macro conditions, systemic relationships, transmission pathw
 ### Financial Application
 
 - **Market & Volatility Scanner**
+- **Company Structure Review**
 - **Asset Snapshot Generator**
 - **Trade Timing & Confirmation**
 - **Price Action & Trend Confirmation**
@@ -58,7 +61,7 @@ These modules frame macro conditions, systemic relationships, transmission pathw
 - **Cross Asset Correlation**
 - **Live Portfolio Monitor**
 
-These modules apply structural context to scenario analysis, portfolio framing, and market inspection.
+These modules apply structural context to scenario analysis, company structure reviews, portfolio framing, and market inspection.
 
 ---
 
@@ -257,7 +260,7 @@ Financial Insight Tools forms part of a broader independent framework studio exp
 
 FIT aligns with the architectural concepts presented in the *Navigating the World of Economics, Finance, and Markets* series — a multi-volume framework examining economics and finance as interconnected systems shaped by institutions, incentives, coordination mechanisms, and technological change.
 
-The full Financial Insight Tools environment extends beyond this public preview into macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, cross-asset mapping, structured observation capture, and AI-ready export workflows.
+The full Financial Insight Tools environment extends beyond this public preview into macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, cross-asset mapping, company structure review, structured observation capture, and AI-ready export workflows.
 
 Further context:  
 https://blakewiltshire.com
