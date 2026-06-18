@@ -3,7 +3,7 @@ Financial Insight Tools Preview (FIT)
 
 This is a focused public preview of the Financial Insight Tools environment.
 It provides a contained view of the Trade & Portfolio Structuring workflow using
-a small set of preloaded assets (Mag 7) and the same structural scaffolding as the full suite.
+a small set of preloaded assets and structured preview records, using the same structural scaffolding as the full suite.
 
 No trading, investment, or policy advice is provided.
 """
@@ -108,17 +108,13 @@ def _render_intro_block() -> None:
     """
     st.write(
         """
-This Streamlit instance is a focused public preview of **Financial Insight Tools (FIT)** —
-a modular research environment for exploring market structure through consistent analytical scaffolding.
+This is a focused public preview of **Financial Insight Tools (FIT)** — a modular research environment for exploring market structure through consistent analytical scaffolding.
 
-The preview centres on one operational layer: **Trade & Portfolio Structuring**.
-Three integrated modules are available in the sidebar, supported by a curated asset set (Mag 7)
-to ensure fast, stable performance in Streamlit Cloud.
+The preview centres on one operational layer: **Trade & Portfolio Structuring.** Three integrated modules are available in the sidebar, supported by a curated asset set and supporting preview datasets to ensure fast, stable performance.
 
-The purpose is to show how FIT structures market inspection, confirmation, and contextual reasoning
-without exposing the full production architecture.
+The purpose is to show how FIT structures market inspection, confirmation, and contextual reasoning without exposing the full production architecture.
 
-**No brokerage integration, no automated execution, and no investment recommendations are provided.**
+No brokerage integration, automated execution, or investment recommendations are provided.
         """
     )
 
@@ -156,7 +152,7 @@ def _render_scope_block() -> None:
     st.write(
         """
 - Three Trade & Portfolio Structuring modules
-- A small preloaded dataset (Magnificent 7)
+- A small preloaded dataset and supporting preview datasets
 - A streamlined interface representative of the broader environment
 
 This preview is intentionally contained to preserve clarity, speed, and accessibility while maintaining
@@ -189,11 +185,12 @@ The **Trade & Portfolio Structuring** modules then apply this context through:
 
 - distribution and volatility analysis
 - company structure review
+- market structure review
 - timing and confirmation frameworks
 - price action and trend structure
 - scenario modelling and trade construction
 
-Supporting calculators, portfolio monitoring workflows, company structure review, structured observation capture,
+Supporting calculators, portfolio monitoring workflows, structured observation capture,
 and AI-ready export bundles complete the broader environment.
 
 FIT aligns with the **Navigating the World of Economics, Finance, and Markets** guide series — a
@@ -238,7 +235,7 @@ def main() -> None:
 
     st.title("Financial Insight Tools Preview")
     st.caption(
-        "*A focused Trade & Portfolio Structuring workflow using a small preloaded dataset.*"
+        "*A focused Trade & Portfolio Structuring workflow using a small preloaded dataset and structured preview records.*"
     )
 
     st.divider()

@@ -1,8 +1,8 @@
 # Financial Insight Tools (FIT) — Public Preview
 
-Financial Insight Tools (FIT) Public Preview is a focused Streamlit view of the Trade & Portfolio Structuring layer within the broader Financial Insight Tools research environment.
+Financial Insight Tools (FIT) Public Preview provides access to a focused subset of the broader Financial Insight Tools research environment.
 
-This repository presents one contained operational layer of the wider FIT architecture. It demonstrates how structured market analysis can be framed through consistent analytical scaffolding without exposing the full production suite.
+This repository presents one contained operational layer of the wider FIT architecture. It demonstrates how market behaviour, timing, and price structure can be explored through consistent analytical scaffolding without exposing the full production environment.
 
 ---
 
@@ -14,11 +14,12 @@ The preview includes three integrated modules:
 - **Trade Timing and Confirmation**
 - **Price Action and Trend Confirmation**
 
-The dataset is restricted to a curated selection of large-cap equities (Magnificent 7) to ensure fast, stable performance.
+The dataset is restricted to a curated selection of large-cap equities and supporting preview datasets to ensure fast, stable performance.
 
 This preview does not include:
 
 - Company Structure Review
+- Market Structure Review
 - Thematic Correlation
 - Relative Macro Transmission
 - Positioning & Crowding
@@ -53,6 +54,7 @@ These modules frame macro conditions, systemic relationships, transmission pathw
 
 - **Market & Volatility Scanner**
 - **Company Structure Review**
+- **Market Structure Review**
 - **Asset Snapshot Generator**
 - **Trade Timing & Confirmation**
 - **Price Action & Trend Confirmation**
@@ -61,7 +63,7 @@ These modules frame macro conditions, systemic relationships, transmission pathw
 - **Cross Asset Correlation**
 - **Live Portfolio Monitor**
 
-These modules apply structural context to scenario analysis, company structure reviews, portfolio framing, and market inspection.
+These modules apply structural context to scenario analysis, company structure reviews, market structure reviews, portfolio framing, and market inspection.
 
 ---
 
@@ -87,7 +89,7 @@ It is intentionally limited in scope to preserve clarity, speed, and accessibili
 ## What This Is (and Isn’t)
 
 **Is:**  
-A structured research environment for exploring market distribution, volatility context, trade timing alignment, and price behaviour using consistent analytical scaffolding.
+A structured research environment for exploring market distribution, volatility context, ownership and supply structure, trade timing alignment, and price behaviour using consistent analytical scaffolding.
 
 **Isn’t:**  
 A brokerage platform, automated trading system, advisory service, signal engine, or predictive model.
@@ -190,9 +192,24 @@ Provides quantitative grounding for downstream analysis.
 
 ---
 
-### 3. Trade Timing and Confirmation
+### 3. Market Structure Review
 
-![Trade Timing and Confirmation](docs/screenshots/03-trade-timing.png)
+![Market Structure Review](docs/screenshots/03-market-structure-review.png)
+
+A structural view across ownership, tradable supply, liquidity pathways, and participation structure:
+
+- Ownership and control profile
+- Float and supply-release context
+- Lockup, secondary supply, and issuance events
+- Institutional participation and index-eligibility pathways
+
+Frames how market access and available supply may evolve through time.
+
+---
+
+### 4. Trade Timing and Confirmation
+
+![Trade Timing and Confirmation](docs/screenshots/04-trade-timing.png)
 
 A structured view across timing and confirmation layers:
 
@@ -205,9 +222,9 @@ No automated execution or signal generation is performed.
 
 ---
 
-### 4. Price Action and Trend Confirmation
+### 5. Price Action and Trend Confirmation
 
-![Price Action and Trend Confirmation](docs/screenshots/04-price-action.png)
+![Price Action and Trend Confirmation](docs/screenshots/05-price-action.png)
 
 A structural view across price behaviour and directional context:
 
@@ -260,7 +277,7 @@ Financial Insight Tools forms part of a broader independent framework studio exp
 
 FIT aligns with the architectural concepts presented in the *Navigating the World of Economics, Finance, and Markets* series — a multi-volume framework examining economics and finance as interconnected systems shaped by institutions, incentives, coordination mechanisms, and technological change.
 
-The full Financial Insight Tools environment extends beyond this public preview into macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, cross-asset mapping, company structure review, structured observation capture, and AI-ready export workflows.
+The full Financial Insight Tools environment extends beyond this public preview into macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, cross-asset mapping, company structure review, market structure review, structured observation capture, and AI-ready export workflows.
 
 Further context:  
 https://blakewiltshire.com
