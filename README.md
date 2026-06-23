@@ -37,7 +37,7 @@ The full FIT suite expands into these domains.
 
 ## Relationship to the Full FIT Suite
 
-The full Financial Insight Tools environment extends across three connected analytical layers.
+The full Financial Insight Tools environment extends across four connected analytical layers.
 
 ### System Foundation
 
@@ -47,6 +47,14 @@ The full Financial Insight Tools environment extends across three connected anal
 - **Positioning & Crowding**
 
 These modules frame macro conditions, systemic relationships, transmission pathways, and market participation structure.
+
+---
+
+### Relationship & Investigation
+
+- **Relationship Manager**
+
+Relationship Manager supports the exploration of how observations, themes, business activities, and market narratives may connect to candidate assets.
 
 ---
 

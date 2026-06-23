@@ -174,6 +174,9 @@ environment built around connected analytical layers rather than isolated tools.
 The system begins with **Economic Exploration**, where macroeconomic conditions, country indicators,
 and thematic structures establish the system foundation.
 
+**Relationship Manager** supports the exploration of how observations, themes, business activities,
+and market narratives may connect to candidate assets.
+
 This extends into **Thematic Correlation** and **Relative Macro Transmission**, where relationships,
 exogenous differentials, and regime divergence can be examined across countries, markets, and policy
 environments.
