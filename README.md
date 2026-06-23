@@ -22,6 +22,7 @@ This preview does not include:
 - Market Structure Review
 - Thematic Correlation
 - Relative Macro Transmission
+- Relationship Manager
 - Positioning & Crowding
 - Cross-asset correlation overlays
 - User-uploaded datasets
