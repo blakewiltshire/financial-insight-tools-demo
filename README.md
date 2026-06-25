@@ -67,7 +67,7 @@ Relationship Manager supports the exploration of how observations, themes, busin
 - **Asset Snapshot Generator**
 - **Trade Timing & Confirmation**
 - **Price Action & Trend Confirmation**
-- **Trade Structuring & Risk Planning**
+- **Watchlist, Trade Structuring & Risk Planning**
 - **Spread Ratio Insights**
 - **Cross Asset Correlation**
 - **Live Portfolio Monitor**
