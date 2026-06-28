@@ -108,11 +108,11 @@ def _render_intro_block() -> None:
     """
     st.write(
         """
-This is a focused public preview of **Financial Insight Tools (FIT)** — a modular research environment for exploring market structure through consistent analytical scaffolding.
+A focused public preview of the Trade & Portfolio Structuring workflow within Financial Insight Tools (FIT).
 
-The preview centres on one operational layer: **Trade & Portfolio Structuring.** Three integrated modules are available in the sidebar, supported by a curated asset set and supporting preview datasets to ensure fast, stable performance.
+Three connected modules demonstrate how market behaviour, trade timing, and price structure can be examined through a structured investigation workflow built on consistent analytical frameworks.
 
-The purpose is to show how FIT structures market inspection, confirmation, and contextual reasoning without exposing the full production architecture.
+The broader FIT environment extends these investigations through macroeconomic analysis, company structure, market structure, structured observations, and AI-assisted investigation.
 
 No brokerage integration, automated execution, or investment recommendations are provided.
         """
@@ -129,17 +129,16 @@ def _render_capabilities_block() -> None:
 The modules are designed to be used together as a structured sequence:
 
 - **Market & Volatility Scanner**
-  Surface distribution structure, dispersion patterns, and volatility context.
+  Establish statistical context through return distributions, volatility structure, and market behaviour.
 
 - **Trade Timing & Confirmation**
-  Assess timing alignment across timeframes and technical confirmation layers.
+  Assess whether market conditions support or challenge a potential trade idea.
 
 - **Price Action & Trend Confirmation**
-  Reinforce directional logic through structured price action and momentum framing.
+  Examine directional behaviour, momentum, and trend structure within the broader investigation.
 
-Outputs are exploratory and interpretive.
-
-The purpose is structured reasoning — not signal generation.
+Together these modules form a structured investigation workflow, encouraging market behaviour, trade timing, and
+price action to be considered collectively rather than as independent technical indicators.
         """
     )
 
@@ -168,33 +167,22 @@ def _render_structure_block() -> None:
     st.markdown("### The Broader Environment")
     st.write(
         """
-The full **Financial Insight Tools (FIT)** suite extends beyond this preview into a broader research
-environment built around connected analytical layers rather than isolated tools.
+The full **Financial Insight Tools (FIT)** suite extends beyond this preview into a broader
+decision-support environment built around connected analytical layers.
 
-The system begins with **Economic Exploration**, where macroeconomic conditions, country indicators,
-and thematic structures establish the system foundation.
+Economic Exploration
 
-**Relationship Manager** supports the exploration of how observations, themes, business activities,
-and market narratives may connect to candidate assets.
+↓
 
-This extends into **Thematic Correlation** and **Relative Macro Transmission**, where relationships,
-exogenous differentials, and regime divergence can be examined across countries, markets, and policy
-environments.
+Relationship & Investigation
 
-**Positioning & Crowding** adds the participant behaviour layer, supporting review of leveraged
-positioning, percentile extremes, and positioning turns across core futures markets.
+↓
 
-The **Trade & Portfolio Structuring** modules then apply this context through:
+Trade & Portfolio Structuring
 
-- distribution and volatility analysis
-- company structure review
-- market structure review
-- timing and confirmation frameworks
-- price action and trend structure
-- scenario modelling and trade construction
+↓
 
-Supporting calculators, portfolio monitoring workflows, structured observation capture,
-and AI-ready export bundles complete the broader environment.
+Observation & AI Investigation
 
 FIT aligns with the **Navigating the World of Economics, Finance, and Markets** guide series — a
 structured examination of economics and finance as interconnected systems shaped by institutions,

@@ -1,10 +1,8 @@
 # Financial Insight Tools (FIT) — Public Preview
 
-Financial Insight Tools (FIT) Public Preview provides access to a focused subset of the broader Financial Insight Tools research environment.
+Financial Insight Tools (FIT) Public Preview provides access to a focused subset of the broader Financial Insight Tools decision-support environment.
 
 This repository presents one contained operational layer of the wider FIT architecture. It demonstrates how market behaviour, timing, and price structure can be explored through consistent analytical scaffolding without exposing the full production environment.
-
----
 
 ## Scope of This Preview
 
@@ -26,66 +24,56 @@ This preview does not include:
 - Positioning & Crowding
 - Cross-asset correlation overlays
 - User-uploaded datasets
-- Observation logging
-- Structured export bundles
+- Decision Support Snapshots
+- Observation & AI Export
+- Research Notes
+- AI Investigation
+- Structured Investigation Bundles
 - Macroeconomic exploration modules
 - Portfolio registry management
-- AI Export Bundles
 
 The full FIT suite expands into these domains.
 
----
-
 ## Relationship to the Full FIT Suite
 
-The full Financial Insight Tools environment extends across four connected analytical layers.
+FIT is structured across connected analytical layers.
 
 ### System Foundation
 
-- **Economic Exploration**
-- **Thematic Correlation**
-- **Relative Macro Transmission**
-- **Positioning & Crowding**
-
-These modules frame macro conditions, systemic relationships, transmission pathways, and market participation structure.
-
----
+- Economic Exploration
+- Thematic Correlation
+- Relative Macro Transmission
+- Positioning & Crowding
 
 ### Relationship & Investigation
 
-- **Relationship Manager**
-
-Relationship Manager supports the exploration of how observations, themes, business activities, and market narratives may connect to candidate assets.
-
----
+- Relationship Manager
 
 ### Financial Application
 
-- **Market & Volatility Scanner**
-- **Company Structure Review**
-- **Market Structure Review**
-- **Asset Snapshot Generator**
-- **Trade Timing & Confirmation**
-- **Price Action & Trend Confirmation**
-- **Watchlist, Trade Structuring & Risk Planning**
-- **Spread Ratio Insights**
-- **Cross Asset Correlation**
-- **Live Portfolio Monitor**
+- Market & Volatility Scanner
+- Company Structure Review
+- Market Structure Review
+- Asset Snapshot Generator
+- Trade Timing & Confirmation
+- Price Action & Trend Confirmation
+- Watchlist, Trade Structuring & Risk Planning
+- Spread Ratio Insights
+- Cross-Asset Correlation
+- Live Portfolio Monitor
 
-These modules apply structural context to scenario analysis, company structure reviews, market structure reviews, portfolio framing, and market inspection.
+### Investigation Workflow
 
----
+- Observation & AI Export
 
-### Utility & Decision Support
+### Utilities
 
-- **Kelly Criterion**
-- **VaR Calculator**
-- **Compounding Calculator**
-- **Standard Deviation Calculator**
-- **Historical Data Currency Converter**
-- **Data Cleaner & Inspector**
-- **Observation Capture**
-- **AI-Ready Export Bundles**
+- Kelly Criterion
+- VaR Calculator
+- Compounding Calculator
+- Standard Deviation Calculator
+- Historical Data Currency Converter
+- Data Cleaner & Inspector
 
 These modules support operational consistency, validation, and structured documentation workflows.
 
@@ -93,12 +81,10 @@ This repository provides access to one focused application layer within that bro
 
 It is intentionally limited in scope to preserve clarity, speed, and accessibility while maintaining the same architectural principles used across the full suite.
 
----
-
 ## What This Is (and Isn’t)
 
 **Is:**  
-A structured research environment for exploring market distribution, volatility context, ownership and supply structure, trade timing alignment, and price behaviour using consistent analytical scaffolding.
+A structured decision-support environment for exploring market behaviour, volatility context, trade timing, and price structure through consistent analytical frameworks.
 
 **Isn’t:**  
 A brokerage platform, automated trading system, advisory service, signal engine, or predictive model.
@@ -106,13 +92,9 @@ No trade execution or financial advice is provided.
 
 All outputs are exploratory and structural in nature.
 
----
-
 ## Python Version
 
 Tested on 3.12.x
-
----
 
 ## Quick Start
 
@@ -172,11 +154,9 @@ The application will launch at:
 
 http://localhost:8501
 
----
 
 ## Screenshots
 
----
 
 ### 1. Financial Insight Tools Preview — Overview
 
@@ -184,7 +164,6 @@ http://localhost:8501
 
 The preview homepage establishes structural orientation and module navigation within the Trade & Portfolio Structuring workflow.
 
----
 
 ### 2. Market and Volatility Scanner
 
@@ -199,24 +178,8 @@ A structural view across market behaviour and volatility conditions:
 
 Provides quantitative grounding for downstream analysis.
 
----
 
-### 3. Market Structure Review
-
-![Market Structure Review](docs/screenshots/03-market-structure-review.png)
-
-A structural view across ownership, tradable supply, liquidity pathways, and participation structure:
-
-- Ownership and control profile
-- Float and supply-release context
-- Lockup, secondary supply, and issuance events
-- Institutional participation and index-eligibility pathways
-
-Frames how market access and available supply may evolve through time.
-
----
-
-### 4. Trade Timing and Confirmation
+### 3. Trade Timing and Confirmation
 
 ![Trade Timing and Confirmation](docs/screenshots/04-trade-timing.png)
 
@@ -229,9 +192,8 @@ A structured view across timing and confirmation layers:
 
 No automated execution or signal generation is performed.
 
----
 
-### 5. Price Action and Trend Confirmation
+### 4. Price Action and Trend Confirmation
 
 ![Price Action and Trend Confirmation](docs/screenshots/05-price-action.png)
 
@@ -244,7 +206,6 @@ A structural view across price behaviour and directional context:
 
 Outputs remain exploratory rather than prescriptive.
 
----
 
 ## Repository Structure
 
@@ -267,7 +228,6 @@ financial-insight-tools-demo/
 
 This repository represents a focused preview layer of the broader Financial Insight Tools architecture.
 
----
 
 ## License & Use
 
@@ -278,20 +238,23 @@ No advisory, brokerage, portfolio management, or automated trading services are 
 
 Refer to LICENSE for details.
 
----
-
 ## Ecosystem Context
 
-Financial Insight Tools forms part of a broader independent framework studio exploring complex systems through structured guides, modular tools, and applied research environments.
+Financial Insight Tools forms part of a broader independent framework studio exploring complex systems through structured guides, modular tools, and applied insight.
 
-FIT aligns with the architectural concepts presented in the *Navigating the World of Economics, Finance, and Markets* series — a multi-volume framework examining economics and finance as interconnected systems shaped by institutions, incentives, coordination mechanisms, and technological change.
+FIT aligns with the architectural concepts presented in the *Navigating the World of Economics, Finance, and Markets* series — a structured examination of economics and finance as interconnected systems shaped by institutions, incentives, coordination mechanisms, and technological change.
 
-The full Financial Insight Tools environment extends beyond this public preview into macroeconomic exploration, thematic correlation, relative macro transmission, positioning analysis, cross-asset mapping, company structure review, market structure review, structured observation capture, and AI-ready export workflows.
+The series spans six thematic areas: Foundational Knowledge, Practical Economics, Finance Fundamentals, Investment Strategies, Trading and Operations, and FinTech Innovations. Together, these areas provide a coherent framework for understanding macroeconomic structure, market dynamics, portfolio construction, and system-level behaviour.
+
+Each guide functions as a self-contained analytical unit while aligning to a broader modular architecture that supports structured reasoning, comparative analysis, and cross-domain exploration.
+
+The companion guides introduce the analytical frameworks and mental models that underpin the wider ecosystem. Triangular Navigation extends each guide through practical application, AI-assisted perspective testing, and decision-support tools. Financial Insight Tools provides the environment in which those concepts become structured investigations, preserving evidence, observations, and reasoning as understanding develops.
+
+Financial Insight Tools operationalises these concepts within a structured investigation environment. The application can be used independently; the guides provide deeper architectural framing for those exploring the underlying structural model.
 
 Further context:  
 https://blakewiltshire.com
 
----
 
 Financial Insight Tools by Blake Wiltshire  
 © Blake Media Ltd.
