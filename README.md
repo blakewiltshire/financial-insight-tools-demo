@@ -1,85 +1,37 @@
 # Financial Insight Tools (FIT) — Public Preview
 
-Financial Insight Tools (FIT) Public Preview provides access to a focused subset of the broader Financial Insight Tools decision-support environment.
+Financial Insight Tools (FIT) Public Preview provides access to a focused subset of the broader Financial Insight Tools investigation environment. It demonstrates how market behaviour, timing, and price structure can be explored through structured investigations while preserving the same analytical principles used throughout the full platform.
 
-This repository presents one contained operational layer of the wider FIT architecture. It demonstrates how market behaviour, timing, and price structure can be explored through consistent analytical scaffolding without exposing the full production environment.
+## Learn More
+
+To understand the investigation philosophy behind Financial Insight Tools (FIT):
+
+- [Why We Built Financial Insight Tools (FIT)](https://blakewiltshire.substack.com/p/financial-insight-tools-fit)
 
 ## Scope of This Preview
 
-The preview includes three integrated modules:
+The public preview includes three integrated modules:
 
-- **Market and Volatility Scanner**
-- **Trade Timing and Confirmation**
-- **Price Action and Trend Confirmation**
+- **Market & Volatility Scanner**
+- **Trade Timing & Confirmation**
+- **Price Action & Trend Confirmation**
 
-The dataset is restricted to a curated selection of large-cap equities and supporting preview datasets to ensure fast, stable performance.
+The dataset is restricted to a curated selection of large-cap equities and supporting preview datasets to provide a fast, stable demonstration of the wider Financial Insight Tools environment.
 
-This preview does not include:
-
-- Company Structure Review
-- Market Structure Review
-- Thematic Correlation
-- Relative Macro Transmission
-- Relationship Manager
-- Positioning & Crowding
-- Cross-asset correlation overlays
-- User-uploaded datasets
-- Decision Support Snapshots
-- Observation & AI Export
-- Research Notes
-- AI Investigation
-- Structured Investigation Bundles
-- Macroeconomic exploration modules
-- Portfolio registry management
-
-The full FIT suite expands into these domains.
+The preview intentionally excludes many modules available in the full platform, including company analysis, macroeconomic exploration, relationship management, investigation preservation, AI-assisted investigation, portfolio workflows, and supporting utilities.
 
 ## Relationship to the Full FIT Suite
 
-FIT is structured across connected analytical layers.
+The complete Financial Insight Tools platform extends across six connected environments:
 
-### System Foundation
+- **Economic Exploration** — macroeconomic indicators and country-level analysis
+- **Intermarket & Correlation** — thematic relationships, transmission, positioning, and cross-market analysis
+- **Trade & Portfolio Structuring** — company analysis, market structure, trade planning, and portfolio workflows
+- **Reference & Investigation Resources** — relationship exploration, classifications, institutional references, and supporting resources
+- **Observation & AI Export** — investigation preservation, AI personas, and structured investigation bundles
+- **Toolbox & Calculators** — supporting analytical and risk-planning utilities
 
-- Economic Exploration
-- Thematic Correlation
-- Relative Macro Transmission
-- Positioning & Crowding
-
-### Relationship & Investigation
-
-- Relationship Manager
-
-### Financial Application
-
-- Market & Volatility Scanner
-- Company Structure Review
-- Market Structure Review
-- Asset Snapshot Generator
-- Trade Timing & Confirmation
-- Price Action & Trend Confirmation
-- Watchlist, Trade Structuring & Risk Planning
-- Spread Ratio Insights
-- Cross-Asset Correlation
-- Live Portfolio Monitor
-
-### Investigation Workflow
-
-- Observation & AI Export
-
-### Utilities
-
-- Kelly Criterion
-- VaR Calculator
-- Compounding Calculator
-- Standard Deviation Calculator
-- Historical Data Currency Converter
-- Data Cleaner & Inspector
-
-These modules support operational consistency, validation, and structured documentation workflows.
-
-This repository provides access to one focused application layer within that broader environment.
-
-It is intentionally limited in scope to preserve clarity, speed, and accessibility while maintaining the same architectural principles used across the full suite.
+This repository demonstrates one focused operational layer within that broader architecture while preserving the same investigation philosophy, analytical consistency, and design principles used throughout the full platform.
 
 ## What This Is (and Isn’t)
 
@@ -226,9 +178,6 @@ financial-insight-tools-demo/
   requirements.txt
 ```
 
-This repository represents a focused preview layer of the broader Financial Insight Tools architecture.
-
-
 ## License & Use
 
 Free to read and use as provided.
@@ -240,7 +189,7 @@ Refer to LICENSE for details.
 
 ## Ecosystem Context
 
-Financial Insight Tools forms part of a broader independent framework studio exploring complex systems through structured guides, modular tools, and applied insight.
+Financial Insight Tools provides a structured environment where observations, evidence, and reasoning remain connected as investigations evolve. The application can be used independently, while the companion guides and articles provide additional architectural context for those exploring the wider framework.
 
 FIT aligns with the architectural concepts presented in the *Navigating the World of Economics, Finance, and Markets* series — a structured examination of economics and finance as interconnected systems shaped by institutions, incentives, coordination mechanisms, and technological change.
 

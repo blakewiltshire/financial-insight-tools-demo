@@ -110,9 +110,9 @@ def _render_intro_block() -> None:
         """
 A focused public preview of the Trade & Portfolio Structuring workflow within Financial Insight Tools (FIT).
 
-Three connected modules demonstrate how market behaviour, trade timing, and price structure can be examined through a structured investigation workflow built on consistent analytical frameworks.
+Three connected modules demonstrate how market behaviour, trade timing, and price structure can be examined as part of a structured investigation built upon consistent analytical frameworks.
 
-The broader FIT environment extends these investigations through macroeconomic analysis, company structure, market structure, structured observations, and AI-assisted investigation.
+The broader FIT environment extends those investigations through macroeconomic exploration, relationship analysis, company structure, market structure, observation preservation, and AI-assisted investigation.
 
 No brokerage integration, automated execution, or investment recommendations are provided.
         """
@@ -123,7 +123,7 @@ def _render_capabilities_block() -> None:
     """
     What the preview brings into view.
     """
-    st.markdown("### The Workflow in View")
+    st.markdown("### The Investigation in View")
     st.write(
         """
 The modules are designed to be used together as a structured sequence:
@@ -137,8 +137,8 @@ The modules are designed to be used together as a structured sequence:
 - **Price Action & Trend Confirmation**
   Examine directional behaviour, momentum, and trend structure within the broader investigation.
 
-Together these modules form a structured investigation workflow, encouraging market behaviour, trade timing, and
-price action to be considered collectively rather than as independent technical indicators.
+Together these modules demonstrate one way a structured investigation can develop, encouraging market behaviour,
+trade timing, and price structure to be examined collectively rather than as isolated technical observations.
         """
     )
 
@@ -168,13 +168,13 @@ def _render_structure_block() -> None:
     st.write(
         """
 The full **Financial Insight Tools (FIT)** suite extends beyond this preview into a broader
-decision-support environment built around connected analytical layers.
+decision-support environment built around connected investigation environments.
 
 Economic Exploration
 
 ↓
 
-Relationship & Investigation
+Intermarket & Correlation
 
 ↓
 
@@ -182,14 +182,23 @@ Trade & Portfolio Structuring
 
 ↓
 
-Observation & AI Investigation
+Reference & Investigation Resources
+
+↓
+
+Observation & AI Export
 
 FIT aligns with the **Navigating the World of Economics, Finance, and Markets** guide series — a
 structured examination of economics and finance as interconnected systems shaped by institutions,
 incentives, coordination mechanisms, and technological change.
 
-Further context:
-**https://blakewiltshire.com**
+Further reading:
+
+• **Why We Built Financial Insight Tools (FIT)**
+https://blakewiltshire.substack.com/p/financial-insight-tools-fit
+
+• **Blake Wiltshire**
+https://blakewiltshire.com
         """
     )
 
@@ -226,7 +235,7 @@ def main() -> None:
 
     st.title("Financial Insight Tools Preview")
     st.caption(
-        "*A focused Trade & Portfolio Structuring workflow using a small preloaded dataset and structured preview records.*"
+        "*A focused Trade & Portfolio Structuring investigation environment from the broader FIT suite.*"
     )
 
     st.divider()
