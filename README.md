@@ -106,6 +106,22 @@ The application will launch at:
 
 http://localhost:8501
 
+### Starting a New Session
+
+Financial Insight Tools only needs to be installed once.
+
+To begin a new session:
+
+1. Open a terminal.
+2. Navigate to the Financial Insight Tools project directory.
+3. Activate the virtual environment.
+4. Launch the application:
+
+```bash
+streamlit run app.py
+```
+
+If the virtual environment is no longer active (for example, after restarting your computer or opening a new terminal), reactivate it before launching the application.
 
 ## Screenshots
 
