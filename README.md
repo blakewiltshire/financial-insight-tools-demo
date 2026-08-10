@@ -27,7 +27,7 @@ The complete Financial Insight Tools platform extends across six connected envir
 - **Economic Exploration** — macroeconomic indicators and country-level analysis
 - **Intermarket & Correlation** — thematic relationships, transmission, positioning, and cross-market analysis
 - **Trade & Portfolio Structuring** — company analysis, market structure, trade planning, and portfolio workflows
-- **Reference & Investigation Resources** — relationship exploration, classifications, institutional references, and supporting resources
+- **Reference & Investigation Resources** — structured opportunity exploration, relationship investigation, classifications, institutional references, and supporting resources
 - **Observation & AI Export** — investigation preservation, AI personas, and structured investigation bundles
 - **Toolbox & Calculators** — supporting analytical and risk-planning utilities
 
