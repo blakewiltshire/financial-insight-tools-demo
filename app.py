@@ -69,7 +69,7 @@ def _render_sidebar(paths: Dict[str, str]) -> None:
     if os.path.isfile(sidebar_image):
         st.sidebar.image(sidebar_image, width="stretch")
 
-    st.sidebar.title("Preview Modules")
+    st.sidebar.title("Modules")
     st.sidebar.caption(
         "A focused Trade & Portfolio Structuring workflow from the broader FIT environment."
     )
@@ -225,7 +225,7 @@ def main() -> None:
     and renders the main layout components.
     """
     st.set_page_config(
-        page_title="Financial Insight Tools Preview",
+        page_title="Financial Insight Tools",
         layout="wide",
     )
 
@@ -233,7 +233,7 @@ def main() -> None:
 
     _render_sidebar(paths)
 
-    st.title("Financial Insight Tools Preview")
+    st.title("Financial Insight Tools")
     st.caption(
         "*A focused Trade & Portfolio Structuring investigation environment from the broader FIT suite.*"
     )
