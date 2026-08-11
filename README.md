@@ -1,6 +1,6 @@
-# Financial Insight Tools (FIT) — Public Preview
+# Financial Insight Tools (FIT)
 
-Financial Insight Tools (FIT) Public Preview provides access to a focused subset of the broader Financial Insight Tools investigation environment. It demonstrates how market behaviour, timing, and price structure can be explored through structured investigations while preserving the same analytical principles used throughout the full platform.
+Financial Insight Tools (FIT) provides access to a focused Trade & Portfolio Structuring environment from the broader Financial Insight Tools investigation platform. It demonstrates how market behaviour, trade timing, and price structure can be explored through structured investigations while preserving the same analytical principles used throughout the full platform.
 
 ## Learn More
 
@@ -8,17 +8,17 @@ To understand the investigation philosophy behind Financial Insight Tools (FIT):
 
 - [Why We Built Financial Insight Tools (FIT)](https://blakewiltshire.substack.com/p/financial-insight-tools-fit)
 
-## Scope of This Preview
+## Included in this Environment
 
-The public preview includes three integrated modules:
+This environment includes:
 
 - **Market & Volatility Scanner**
 - **Trade Timing & Confirmation**
 - **Price Action & Trend Confirmation**
 
-The dataset is restricted to a curated selection of large-cap equities and supporting preview datasets to provide a fast, stable demonstration of the wider Financial Insight Tools environment.
+The environment uses a curated selection of large-cap equities and supporting datasets to provide a fast, stable introduction to the Trade & Portfolio Structuring workflow.
 
-The preview intentionally excludes many modules available in the full platform, including company analysis, macroeconomic exploration, relationship management, investigation preservation, AI-assisted investigation, portfolio workflows, and supporting utilities.
+The broader Financial Insight Tools platform extends beyond this environment through macroeconomic exploration, relationship investigation, company analysis, observation preservation, AI-assisted investigation, portfolio workflows, and supporting utilities.
 
 ## Relationship to the Full FIT Suite
 
@@ -126,7 +126,7 @@ If the virtual environment is no longer active (for example, after restarting yo
 ## Screenshots
 
 
-### 1. Financial Insight Tools Preview — Overview
+### 1. Financial Insight Tools — Overview
 
 ![FIT Preview Overview](docs/screenshots/01-preview-overview.png)
 

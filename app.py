@@ -71,7 +71,7 @@ def _render_sidebar(paths: Dict[str, str]) -> None:
 
     st.sidebar.title("Modules")
     st.sidebar.caption(
-        "A focused Trade & Portfolio Structuring workflow from the broader FIT environment."
+        "A focused Trade & Portfolio Structuring environment from the broader FIT suite."
     )
 
     st.sidebar.page_link(
@@ -108,7 +108,7 @@ def _render_intro_block() -> None:
     """
     st.write(
         """
-A focused public preview of the Trade & Portfolio Structuring workflow within Financial Insight Tools (FIT).
+A focused public Trade & Portfolio Structuring environment from the broader Financial Insight Tools (FIT) suite.
 
 Three connected modules demonstrate how market behaviour, trade timing, and price structure can be examined as part of a structured investigation built upon consistent analytical frameworks.
 
@@ -147,15 +147,15 @@ def _render_scope_block() -> None:
     """
     Scope and limits.
     """
-    st.markdown("### What This Preview Includes")
+    st.markdown("### What This Environment Includes")
     st.write(
         """
 - Three Trade & Portfolio Structuring modules
-- A small preloaded dataset and supporting preview datasets
-- A streamlined interface representative of the broader environment
+- A curated dataset for structured investigation
+- A focused investigation environment representative of the broader FIT platform
 
-This preview is intentionally contained to preserve clarity, speed, and accessibility while maintaining
-the same structural principles used across the full FIT suite.
+This environment is intentionally focused to provide a clear introduction to the Trade & Portfolio Structuring
+workflow while preserving the same investigation principles used throughout Financial Insight Tools.
         """
     )
 
