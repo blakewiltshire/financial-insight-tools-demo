@@ -238,7 +238,7 @@ def main() -> None:
         "*A focused Trade & Portfolio Structuring investigation environment from the broader FIT suite.*"
     )
 
-    st.divider()
+    st.space()
     _render_intro_block()
     st.divider()
     _render_capabilities_block()
