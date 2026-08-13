@@ -167,7 +167,7 @@ def _render_structure_block() -> None:
     st.markdown("### The Broader Environment")
     st.write(
         """
-The full **Financial Insight Tools (FIT)** suite extends beyond this preview into a broader
+The full **Financial Insight Tools (FIT)** suite extends beyond this focused environment into a broader
 decision-support environment built around connected investigation environments.
 
 Economic Exploration
