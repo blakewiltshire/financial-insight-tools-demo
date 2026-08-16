@@ -15,7 +15,7 @@ from typing import Dict
 
 import streamlit as st
 
-from core.helpers import (  # pylint: disable=import-error
+from core.helpers_1 import (  # pylint: disable=import-error
     load_markdown_file,
     get_named_paths,
 )
@@ -69,9 +69,9 @@ def _render_sidebar(paths: Dict[str, str]) -> None:
     if os.path.isfile(sidebar_image):
         st.sidebar.image(sidebar_image, width="stretch")
 
-    st.sidebar.title("Modules")
+    st.sidebar.title("Examine")
     st.sidebar.caption(
-        "A focused Trade & Portfolio Structuring environment from the broader FIT suite."
+        "Financial Insight Tools"
     )
 
     st.sidebar.page_link(
@@ -118,12 +118,11 @@ No brokerage integration, automated execution, or investment recommendations are
         """
     )
 
-
 def _render_capabilities_block() -> None:
     """
     What the preview brings into view.
     """
-    st.markdown("### The Investigation in View")
+    st.markdown("### In View")
     st.write(
         """
 The modules are designed to be used together as a structured sequence:
@@ -233,7 +232,7 @@ def main() -> None:
 
     _render_sidebar(paths)
 
-    st.title("Financial Insight Tools")
+    st.title("Financial Insight Tools — Examine")
     st.caption(
         "*A focused Trade & Portfolio Structuring investigation environment from the broader FIT suite.*"
     )

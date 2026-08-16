@@ -1,8 +1,5 @@
-## About & Support
+**Financial Insight Tools — Examine** is part of the broader Financial Insight Tools (FIT) environment from Blake Wiltshire.
 
-This Streamlit instance is a lightweight public preview of **Financial Insight Tools (FIT)**.
-The full FIT environment extends beyond the modules shown here.
-
-- [🔗 Source Code (full suite)](https://github.com/blakewiltshire/financial-insight-tools)
-- [🌐 Official Website](https://blakewiltshire.com)
+- [🌐 Blake Wiltshire](https://blakewiltshire.com)
+- [📥 Download Tools](https://github.com/blakewiltshire)
 - [☕ Support the Project](https://buymeacoffee.com/blakewiltshire)
