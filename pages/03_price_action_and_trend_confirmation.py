@@ -172,7 +172,7 @@ with st.expander("ℹ️ About This App"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='Financial Insight Tools')
+st.sidebar.page_link('app.py', label='Financial Insight Tools — Examine')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
@@ -734,7 +734,6 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # Footer
 # -------------------------------------------------------------------------------------------------
 st.divider()
-
 st.caption(
     "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — \
     No trading, investment, or policy advice provided."

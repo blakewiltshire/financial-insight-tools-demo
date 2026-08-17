@@ -10,7 +10,7 @@
 # Docstring
 # -------------------------------------------------------------------------------------------------
 """
-🔎 Market & Volatility Scanner
+Market & Volatility Scanner
 
 This Streamlit app provides dynamic asset-level and group-level analysis for
 volatility classification, return resampling, and correlation assessment across
@@ -221,7 +221,7 @@ with st.expander("ℹ️ About This App"):
 # Also links back to app dashboard (e.g., app.py)
 # -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='Financial Insight Tools')
+st.sidebar.page_link('app.py', label='Financial Insight Tools — Examine')
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
