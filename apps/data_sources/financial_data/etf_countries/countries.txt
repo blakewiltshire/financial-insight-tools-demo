@@ -1,0 +1,87 @@
+Preloaded Countries
+
+1. United States (SP500)
+iShares MSCI USA ETF (iShares SP500) – Tracks the performance of the S&P 500 Index, which represents the large-cap segment of the US equity market.
+2. United Kingdom (FTSE 100)
+iShares MSCI UK ETF (iShares FTSE 100) – This ETF tracks the performance of the UK’s leading large-cap companies.
+3. Japan
+iShares MSCI Japan ETF – Tracks the performance of the Japanese equity market, focusing on large and mid-cap stocks.
+4. Canada
+iShares MSCI Canada ETF – Represents Canadian equities, with a particular focus on large-cap stocks in sectors like energy, materials, and finance.
+5. European Union
+iShares MSCI Europe ETF – Tracks the performance of large and mid-cap companies across European developed markets.
+6. China
+iShares MSCI China ETF – Focuses on Chinese stocks and is a great representative of the Chinese equity market, which plays a significant role in global economic movements.
+7. Emerging Markets
+iShares MSCI Emerging Markets ETF (EEM) – This ETF tracks the performance of large and mid-cap companies across 26 emerging market countries, providing a broader view of global growth.
+8. Australia
+iShares MSCI Australia ETF – Represents the Australian stock market, which includes large companies in sectors such as finance, resources, and telecommunications.
+9. South Korea
+iShares MSCI South Korea ETF – A good representation of South Korea’s equity market, with a particular emphasis on technology and consumer sectors.
+10. Hong Kong
+iShares MSCI Hong Kong ETF – A great way to track the performance of companies listed in Hong Kong, which acts as a financial hub for China and other Asian markets.
+
+
+
+
+
+United States
+iShares MSCI USA ETF: Ticker: EUSA
+This ETF provides exposure to large- and mid-cap companies in the United States.
+2. United Kingdom
+iShares MSCI UK ETF: Ticker: EWU
+Tracks the performance of the UK equity market, covering large- and mid-cap companies.
+3. Japan
+iShares MSCI Japan ETF: Ticker: EWJ
+This ETF tracks the performance of Japanese equities, primarily large- and mid-cap companies.
+4. Canada
+iShares MSCI Canada ETF: Ticker: EWC
+Focuses on Canadian large- and mid-cap equities.
+5. Germany
+iShares MSCI Germany ETF: Ticker: EWG
+Provides exposure to German equities, tracking large- and mid-cap stocks.
+6. France
+iShares MSCI France ETF: Ticker: EWQ
+Tracks the performance of large- and mid-cap companies in France.
+7. Australia
+iShares MSCI Australia ETF: Ticker: EWA
+Offers exposure to Australian equities, focusing on large- and mid-cap stocks.
+8. Italy
+iShares MSCI Italy ETF: Ticker: EWI
+Tracks Italian equities, covering the large- and mid-cap segments.
+9. Spain
+iShares MSCI Spain ETF: Ticker: EWP
+This ETF tracks Spanish companies, mainly large- and mid-cap firms.
+10. Switzerland
+iShares MSCI Switzerland ETF: Ticker: EWL
+Provides exposure to Swiss equities, including companies like Nestlé, Novartis, etc.
+11. Hong Kong
+iShares MSCI Hong Kong ETF: Ticker: EWH
+Focuses on equities in Hong Kong.
+12. South Korea
+iShares MSCI South Korea ETF: Ticker: EWY
+Offers exposure to South Korean large- and mid-cap stocks.
+
+
+
+
+iShares MSCI USA ETF: Ticker: EUSA
+iShares MSCI UK ETF: Ticker: EWU
+iShares MSCI Japan ETF: Ticker: EWJ
+iShares MSCI Canada ETF: Ticker: EWC
+iShares MSCI Germany ETF: Ticker: EWG
+iShares MSCI France ETF: Ticker: EWQ
+iShares MSCI Australia ETF: Ticker: EWA
+iShares MSCI Italy ETF: Ticker: EWI
+iShares MSCI Spain ETF: Ticker: EWP
+iShares MSCI Switzerland ETF: Ticker: EWL
+iShares MSCI Hong Kong ETF: Ticker: EWH
+iShares MSCI South Korea ETF: Ticker: EWY
+
+
+
+EUSA ETF Stock Price History.csvEWA ETF Stock Price History.csvEWC ETF Stock Price History.csvEWG ETF Stock Price History.csvEWH ETF Stock Price History.csvEWI ETF Stock Price History.csvEWJ ETF Stock Price History.csvEWL ETF Stock Price History.csvEWP ETF Stock Price History.csvEWQ ETF Stock Price History.csvEWU ETF Stock Price History.csvEWY ETF Stock Price History.csv
+
+
+
+assetscountriesindexpreloadspdr

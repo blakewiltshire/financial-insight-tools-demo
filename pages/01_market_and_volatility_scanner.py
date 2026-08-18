@@ -58,7 +58,7 @@ from datetime import datetime, UTC
 # -------------------------------------------------------------------------------------------------
 # Core Utilities — load shared pathing tools, markdown loaders, sidebar links etc.
 # -------------------------------------------------------------------------------------------------
-from core.helpers import (  # pylint: disable=import-error
+from core.helpers_1 import (  # pylint: disable=import-error
     load_markdown_file,
     build_sidebar_links,
     get_named_paths,
@@ -72,7 +72,6 @@ from core.helpers import (  # pylint: disable=import-error
 # -------------------------------------------------------------------------------------------------
 PATHS = get_named_paths(__file__)
 ROOT_PATH = PATHS["level_up_1"]
-APPS_PATH = PATHS["level_up_2"]
 
 # -------------------------------------------------------------------------------------------------
 # Shared Assets — Markdown and branding used across all apps
@@ -81,55 +80,49 @@ ABOUT_APP_MD = os.path.join(ROOT_PATH, "docs", "about_market_and_volatility_scan
 HELP_APP_MD = os.path.join(ROOT_PATH, "docs", "help_market_volatility_scanner.md")
 ABOUT_SUPPORT_MD = os.path.join(ROOT_PATH, "docs", "about_and_support.md")
 BRAND_LOGO_PATH = os.path.join(ROOT_PATH, "brand", "blake_logo.png")
-DEFAULT_ASSET_SNAPSHOT_PATH = os.path.join(APPS_PATH, "data_sources", "financial_data",
+DEFAULT_ASSET_SNAPSHOT_PATH = os.path.join(ROOT_PATH, "apps", "data_sources", "financial_data",
 "preprocessed_default", "preloaded_asset_summary.pkl")
-USER_ASSET_SNAPSHOT_PATH = os.path.join(APPS_PATH, "data_sources", "financial_data",
-"preprocessed_user", "preloaded_asset_summary.pkl")
 
-# -------------------------------------------------------------------------------------------------
-# Observation Engine Path — Enable observation tools (form + journal)
-# -------------------------------------------------------------------------------------------------
-sys.path.append(os.path.join(APPS_PATH, "observation_engine"))
 
 # -------------------------------------------------------------------------------------------------
 # Clean and format asset files
 # -------------------------------------------------------------------------------------------------
-from data_sources.financial_data.processing_correlation import (
+from apps.data_sources.financial_data.processing_correlation import (
     calculate_atr, resample_and_calculate_returns, clean_data, clean_generic_data,
     load_asset_data, load_data_from_file
 )
 
-from data_sources.financial_data.shared_utils import convert_date_to_us_format
+from apps.data_sources.financial_data.shared_utils import convert_date_to_us_format
 
-from data_sources.financial_data.processing_correlation_assets.equities import (
+from apps.data_sources.financial_data.processing_correlation_assets.equities import (
     load_and_clean_equities_7, load_and_clean_equities_const
 )
 
-from data_sources.financial_data.processing_correlation_assets.market_indices import (
+from apps.data_sources.financial_data.processing_correlation_assets.market_indices import (
     load_and_clean_market_indices
 )
 
-from data_sources.financial_data.processing_correlation_assets.currencies import (
+from apps.data_sources.financial_data.processing_correlation_assets.currencies import (
     load_and_clean_currency
 )
 
-from data_sources.financial_data.processing_correlation_assets.crypto import (
+from apps.data_sources.financial_data.processing_correlation_assets.crypto import (
     load_and_clean_cryptocurrency
 )
 
-from data_sources.financial_data.processing_correlation_assets.commodities import (
+from apps.data_sources.financial_data.processing_correlation_assets.commodities import (
     load_and_clean_commodities
 )
 
-from data_sources.financial_data.processing_correlation_assets.etfs import (
+from apps.data_sources.financial_data.processing_correlation_assets.etfs import (
     load_and_clean_popular, load_and_clean_sectors, load_and_clean_countries
 )
 
-from data_sources.financial_data.processing_correlation_assets.bonds import (
+from apps.data_sources.financial_data.processing_correlation_assets.bonds import (
     load_and_clean_short_term_bonds, load_and_clean_long_term_bonds
 )
 
-from data_sources.financial_data.processing_correlation_assets.user_uploads import (
+from apps.data_sources.financial_data.processing_correlation_assets.user_uploads import (
     load_and_clean_user_correlations,
     load_and_clean_user_volatility,
     load_and_prepare_user_returns
@@ -138,10 +131,8 @@ from data_sources.financial_data.processing_correlation_assets.user_uploads impo
 # -------------------------------------------------------------------------------------------------
 # Mapping Logic
 # -------------------------------------------------------------------------------------------------
-from data_sources.financial_data.preloaded_assets import get_preloaded_assets
-from data_sources.financial_data.user_preloaded_assets import get_user_preloaded_assets
-from data_sources.financial_data.asset_map import get_asset_path
-from data_sources.financial_data.user_asset_map import get_user_asset_path
+from apps.data_sources.financial_data.preloaded_assets import get_preloaded_assets
+from apps.data_sources.financial_data.asset_map import get_asset_path
 
 # -------------------------------------------------------------------------------------------------
 # Load statistical mappings
@@ -187,7 +178,7 @@ from use_cases.statistical_analysis.visualisations.visualisations import (
 # -------------------------------------------------------------------------------------------------
 # Filtering Options (Ranges, Events and Temporal)
 # -------------------------------------------------------------------------------------------------
-from data_sources.financial_data.filtering_options import filtering_options_map
+from apps.data_sources.financial_data.filtering_options import filtering_options_map
 
 # -------------------------------------------------------------------------------------------------
 # Reminder: __init__.py
@@ -200,14 +191,23 @@ from data_sources.financial_data.filtering_options import filtering_options_map
 # -------------------------------------------------------------------------------------------------
 # Streamlit Page Setup
 # -------------------------------------------------------------------------------------------------
-st.set_page_config(page_title="Market & Volatility Scanner", layout="wide")
-st.title('Market & Volatility Scanner')
-st.caption("*Assess asset-specific volatility patterns, return probabilities, and time filters.*")
+st.set_page_config(
+    page_title="Market & Volatility Scanner",
+    layout="wide",
+)
 
-# -------------------------------------------------------------------------------------------------
-# Load About Markdown (auto-skips if not replaced)
-# -------------------------------------------------------------------------------------------------
-with st.expander("ℹ️ About This App"):
+st.title("Market & Volatility Scanner")
+
+st.caption(
+    "*Explore market movement, volatility, return behaviour, and statistical characteristics.*"
+)
+
+st.write(
+    "Scan available assets across selected periods, then examine individual assets "
+    "through statistical, performance, risk, and relationship measures."
+)
+
+with st.expander("ℹ️ About Market & Volatility Scanner"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -215,59 +215,115 @@ with st.expander("ℹ️ About This App"):
         st.error("File not found: docs/about_market_and_volatility_scanner.md")
 
 # -------------------------------------------------------------------------------------------------
-# Navigation Sidebar
-# Allows navigation across numbered subpages in /pages/
-# Uses `build_sidebar_links()` to list only structured pages (e.g., 100_....py)
-# Also links back to app dashboard (e.g., app.py)
+# Sidebar
 # -------------------------------------------------------------------------------------------------
+if os.path.isfile(BRAND_LOGO_PATH):
+    st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
+
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='Financial Insight Tools — Examine')
+st.sidebar.page_link("app.py", label="Financial Insight Tools — Examine")
+
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
 
-st.sidebar.divider()
-
 # -------------------------------------------------------------------------------------------------
-# Branding
+# Asset Selection
 # -------------------------------------------------------------------------------------------------
-st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
+st.sidebar.title("Select Asset")
 
-# # -------------------------------------------------------------------------------------------------
-# # Asset Selection Logic (Preloaded + User Upload)
-# # -------------------------------------------------------------------------------------------------
-st.sidebar.title('Select Asset')
+source_labels = {
+    "Preloaded Asset Types (Default)": "Preloaded Assets",
+    "Upload my own files": "Upload My Own Data",
+}
 
-# --- Uploaded Asset Defaults ---
-UPLOADED_FILE = None
-DATA_TITLE = ''  # Default title is empty, no predefined title
-ASSET_TYPE = ""  # Default asset type is empty, needs to be selected
-
-# --- Data source method ---
-data_source = st.sidebar.selectbox(
-    'Choose your data source',
-    ['Preloaded Asset Types (Default)']
+data_source = st.sidebar.radio(
+    "Choose your data source",
+    list(source_labels.keys()),
+    format_func=lambda value: source_labels[value],
 )
 
-# Track which source is being used (for later correlation group logic)
-st.session_state['ASSET_SOURCE_TYPE'] = data_source
+# Track source for later comparison-group logic.
+st.session_state["ASSET_SOURCE_TYPE"] = data_source
 
-# --- Preloaded Assets: Default and User ---
-preloaded_assets_default = get_preloaded_assets()
-preloaded_assets_user = get_user_preloaded_assets()
+processed_df = None
+DATA_TITLE = ""
+ASSET_TYPE = ""
+asset_path = None
+asset_sample = None
+uploaded_file = None
 
-# --- Preloaded Assets (Default) ---
-if data_source == 'Preloaded Asset Types (Default)':
-    asset_category = st.sidebar.selectbox("Select Asset Category", list(preloaded_assets_default.keys()))
-    asset_sample = st.sidebar.selectbox("Select Base Asset", preloaded_assets_default[asset_category])
-    if asset_sample:
-        DATA_TITLE = asset_sample
-        ASSET_TYPE = asset_category
-        asset_path = get_asset_path(asset_category, asset_sample)
+# -------------------------------------------------------------------------------------------------
+# Upload My Own Data
+# -------------------------------------------------------------------------------------------------
+if data_source == "Upload my own files":
+    st.sidebar.caption(
+        "Preferred fields: `date`, `open`, `high`, `low`, `close`, `volume`."
+    )
 
-# --- Fallback logic (optional if asset_path needed before conditional use) ---
-if data_source.startswith("Preloaded") and asset_sample:
-    if asset_path is None:
-        st.error("Asset file not found. Please check the file name or structure.")
+    template_csv = (
+        "date,open,high,low,close,volume\n"
+        "2026-08-10,100.00,103.00,99.00,102.00,1250000\n"
+        "2026-08-11,102.00,104.50,101.00,103.50,1425000\n"
+        "2026-08-12,103.50,105.00,102.50,104.00,1310000\n"
+    )
+
+    st.sidebar.download_button(
+        "Download Example CSV",
+        data=template_csv,
+        file_name="market_volatility_historical_data_example.csv",
+        mime="text/csv",
+    )
+
+    uploaded_file = st.sidebar.file_uploader(
+        "Upload historical data",
+        type="csv",
+        key="market_volatility_upload",
+    )
+
+    if uploaded_file is None:
+        st.info("Upload a historical price file to begin Market & Volatility analysis.")
+        st.stop()
+
+    DATA_TITLE = os.path.splitext(uploaded_file.name)[0]
+    ASSET_TYPE = "User Upload"
+
+# -------------------------------------------------------------------------------------------------
+# Preloaded Assets
+# -------------------------------------------------------------------------------------------------
+else:
+    preloaded_assets_default = get_preloaded_assets()
+
+    if not preloaded_assets_default:
+        st.error("No preloaded FIT assets are currently available.")
+        st.stop()
+
+    asset_category = st.sidebar.selectbox(
+        "Asset Category",
+        list(preloaded_assets_default.keys()),
+        key="market_volatility_default_category",
+    )
+
+    category_assets = preloaded_assets_default.get(asset_category, [])
+
+    if not category_assets:
+        st.error(
+            f"No assets are available in the selected category: {asset_category}."
+        )
+        st.stop()
+
+    asset_sample = st.sidebar.selectbox(
+        "Select Asset",
+        category_assets,
+        key="market_volatility_default_asset",
+    )
+
+    if not asset_sample:
+        st.info("Select an asset to begin Market & Volatility analysis.")
+        st.stop()
+
+    DATA_TITLE = asset_sample
+    ASSET_TYPE = asset_category
+    asset_path = get_asset_path(asset_category, asset_sample)
 
 # -------------------------------------------------------------------------------------------------
 # Timeline and DPT Controls
@@ -302,28 +358,20 @@ direction = st.sidebar.selectbox(
 # Data Load and Cleaning Pipeline
 # -------------------------------------------------------------------------------------------------
 try:
-    if data_source == 'Upload my own files':
-        if uploaded_file is not None:
-            processed_df = load_data_from_file(uploaded_file, timeline, desired_profit_target)
-        else:
-            st.info("Please upload a CSV file.")
-            st.stop()
-
-    elif data_source == 'Preloaded Asset Types (Default)' and asset_sample:
-        processed_df, DATA_TITLE, ASSET_TYPE = load_asset_data(
-            asset_category, asset_sample, timeline, desired_profit_target
+    if data_source == "Upload my own files":
+        processed_df = load_data_from_file(
+            uploaded_file,
+            timeline,
+            desired_profit_target,
         )
 
-    elif data_source == 'Preloaded Asset Types (User)' and asset_sample:
-        asset_path = get_user_asset_path(asset_category, asset_sample)
-
-        if asset_path is None:
-            st.error("User asset path not found. Please check structure.")
-            st.stop()
-
-        processed_df = load_data_from_file(asset_path, timeline, desired_profit_target)
-        DATA_TITLE = asset_sample
-        ASSET_TYPE = asset_category
+    elif data_source == "Preloaded Asset Types (Default)" and asset_sample:
+        processed_df, DATA_TITLE, ASSET_TYPE = load_asset_data(
+            asset_category,
+            asset_sample,
+            timeline,
+            desired_profit_target,
+        )
 
     else:
         st.error("No valid data source or asset selected.")
@@ -331,19 +379,53 @@ try:
 
     processed_df, weekly_returns_df, monthly_returns_df, quarterly_returns_df, \
         six_month_returns_df, yearly_returns_df, weekly_df, monthly_df, \
-        start_date, end_date = clean_data(processed_df, timeline, desired_profit_target)
+        start_date, end_date = clean_data(
+            processed_df,
+            timeline,
+            desired_profit_target,
+        )
 
-    if 'return' in processed_df.columns:
-        volatility_category, formatted_message = calculate_volatility(processed_df, DATA_TITLE)
+    required_fields = ["date", "open", "high", "low", "close"]
+    missing_fields = [
+        field for field in required_fields
+        if field not in processed_df.columns
+    ]
+
+    if missing_fields:
+        st.error(
+            "Market & Volatility analysis requires the following core fields: "
+            "`date`, `open`, `high`, `low`, `close`. "
+            f"Missing: {', '.join(missing_fields)}."
+        )
+        st.stop()
+
+    if (
+        "volume" not in processed_df.columns
+        or processed_df["volume"].dropna().empty
+    ):
+        st.sidebar.warning(
+            "Volume data is unavailable. Volume-based measures may not produce output."
+        )
+
+    st.sidebar.caption(
+        f"Loaded: **{DATA_TITLE}** · {len(processed_df):,} observations"
+    )
+
+    if "return" in processed_df.columns:
+        volatility_category, formatted_message = calculate_volatility(
+            processed_df,
+            DATA_TITLE,
+        )
     else:
-        st.error("The necessary data for volatility analysis ('return') is missing.")
+        st.error("The necessary data for volatility analysis (`return`) is missing.")
+        st.stop()
 
-except KeyError as e:
-    st.error(f"Missing key column: {e}")
-except ValueError as e:
-    st.error(f"Value error during volatility calculation: {e}")
-except Exception as e:
-    st.error(f"Unexpected error: {e}")
+except (KeyError, ValueError, TypeError, pd.errors.ParserError) as exc:
+    st.error(f"Unable to prepare the selected data: {exc}")
+    st.stop()
+except Exception as exc:
+    st.error(f"Unexpected error while preparing the selected data: {exc}")
+    st.stop()
 
 # -------------------------------------------------------------------------------------------------
 # Display for the selected data
@@ -357,11 +439,8 @@ last_price, days_since_bear_market, current_drawdown, max_price, max_price_date,
     monthly_return = calculate_asset_metrics(processed_df
 )
 
-# Check if the user uploaded their own files or is using preloaded assets
-if data_source == 'Upload my own files':
-    asset_type_display = ASSET_TYPE  # Display the uploaded asset type
-else:
-    asset_type_display = asset_category  # Display the preloaded asset category
+# Display the selected source context.
+asset_type_display = ASSET_TYPE
 
 # Display in the Overview Section
 st.markdown(f"""
@@ -373,7 +452,7 @@ st.markdown(f"""
 # -------------------------------------------------------------------------------------------------
 # Analysis Summary - Snapshots
 # -------------------------------------------------------------------------------------------------
-if data_source in ["Preloaded Asset Types (Default)", "Preloaded Asset Types (User)"]:
+if data_source == "Preloaded Asset Types (Default)":
     overview_tab0, overview_tab1, overview_tab2, overview_tab3, overview_tab4 = st.tabs(
         ["Asset Group Summary", "Asset Snapshot", "Key Metrics",
          "ATR & Returns", "DPT Probability"]
@@ -384,61 +463,148 @@ else:
     )
 
 # -------------------------------------------------------------------------------------------------
-# Snapshot Group Summary — Only for Preloaded Types
+# Snapshot Group Summary — Bundled Assets Only
 # -------------------------------------------------------------------------------------------------
-if data_source in ["Preloaded Asset Types (Default)", "Preloaded Asset Types (User)"]:
+if data_source == "Preloaded Asset Types (Default)":
     with overview_tab0:
         try:
-            snapshot_path = (
-                DEFAULT_ASSET_SNAPSHOT_PATH if data_source == "Preloaded Asset Types (Default)"
-                else USER_ASSET_SNAPSHOT_PATH
-            )
+            if os.path.exists(DEFAULT_ASSET_SNAPSHOT_PATH):
+                snapshot_df = pd.read_pickle(DEFAULT_ASSET_SNAPSHOT_PATH)
 
-            if os.path.exists(snapshot_path):
-                snapshot_df = pd.read_pickle(snapshot_path)
-                file_timestamp = os.path.getmtime(snapshot_path)
-                snapshot_date = datetime.fromtimestamp(file_timestamp).strftime('%Y-%m-%d %H:%M:%S')
+                file_timestamp = os.path.getmtime(DEFAULT_ASSET_SNAPSHOT_PATH)
+                snapshot_date = datetime.fromtimestamp(
+                    file_timestamp
+                ).strftime("%Y-%m-%d %H:%M:%S")
 
                 st.info(
-                    f"📦 This group summary was generated using the **Asset Snapshot Scanner**.\n\n"
-                    f"🗓️ Snapshot last updated: **{snapshot_date}**\n\n"
-                    f"⚠️ *Note*: This timestamp reflects when the summary file was saved — "
-                    f"individual assets may still have older data unless all underlying files were updated.\n\n"
-                    f"🔄 To ensure full accuracy, consider rerunning the scanner after modifying or adding asset files."
+                    f"Snapshot last updated: **{snapshot_date}**\n\n"
+                    f"*The timestamp reflects when the group summary file was saved. "
+                    f"Individual underlying asset observations may have different latest dates.*"
                 )
 
-                snapshot_df["Asset Name"] = snapshot_df["Asset Name"].astype(str).str.strip()
-                snapshot_df["Category"] = snapshot_df["Category"].astype(str).str.strip().str.lower()
+                snapshot_df["Asset Name"] = (
+                    snapshot_df["Asset Name"]
+                    .astype(str)
+                    .str.strip()
+                )
+
+                snapshot_df["Category"] = (
+                    snapshot_df["Category"]
+                    .astype(str)
+                    .str.strip()
+                    .str.lower()
+                )
+
                 category_name_clean = asset_category.strip().lower()
 
-                group_df = snapshot_df[snapshot_df["Category"] == category_name_clean].copy()
+                group_df = snapshot_df[
+                    snapshot_df["Category"] == category_name_clean
+                ].copy()
 
                 if not group_df.empty:
-                    group_df = group_df.drop(columns=["Category"], errors="ignore")
-                    st.subheader("🧾 Asset Group Summary")
-                    st.markdown(f"Snapshot metrics for **{asset_category.strip()}**")
+                    group_asset_type = asset_category.strip().lower()
+
+                    if "currenc" in group_asset_type or group_asset_type in {
+                        "forex",
+                        "fx",
+                    }:
+                        group_price_format = "%.4f"
+                    elif "crypto" in group_asset_type:
+                        group_price_format = "%.4f"
+                    else:
+                        group_price_format = "%.2f"
+
+                    group_df = group_df.drop(
+                        columns=["Category"],
+                        errors="ignore",
+                    )
+
+                    st.subheader("Asset Group Summary")
+                    st.caption(
+                        f"Snapshot metrics for the bundled **{asset_category.strip()}** group."
+                    )
+
                     st.data_editor(
                         group_df,
-                        width='stretch',
+                        width="stretch",
                         column_config={
-                            "1M % Chg": st.column_config.NumberColumn(format="%.2f %%"),
-                            "YTD % Chg": st.column_config.NumberColumn(format="%.2f %%"),
-                            "Last Close": st.column_config.NumberColumn(format="%.2f"),
-                            "52w Low": st.column_config.NumberColumn(format="%.2f"),
-                            "52w High": st.column_config.NumberColumn(format="%.2f"),
-                            "52w Range": st.column_config.NumberColumn(format="%.2f"),
-                            "Last 10 Days Return": st.column_config.BarChartColumn(y_min=-10, y_max=15)
+                            "1M % Chg": st.column_config.NumberColumn(
+                                format="%.2f %%"
+                            ),
+                            "YTD % Chg": st.column_config.NumberColumn(
+                                format="%.2f %%"
+                            ),
+                            "Last Close": st.column_config.NumberColumn(
+                                format=group_price_format
+                            ),
+                            "52w Low": st.column_config.NumberColumn(
+                                format=group_price_format
+                            ),
+                            "52w High": st.column_config.NumberColumn(
+                                format=group_price_format
+                            ),
+                            "52w Range": st.column_config.NumberColumn(
+                                format=group_price_format
+                            ),
+                            "Last 10 Days Return":
+                                st.column_config.BarChartColumn(
+                                    y_min=-10,
+                                    y_max=15,
+                                ),
                         },
                         disabled=True,
-                        hide_index=True
+                        hide_index=True,
                     )
                 else:
-                    st.info("No snapshot data found for this group.")
-            else:
-                st.info("**Asset Group Summaries are not included in the public preview**.")
-        except Exception as error:
-            st.error(f"❌ Could not load snapshot data: {error}")
+                    st.info("No snapshot data found for this bundled asset group.")
 
+            else:
+                st.info(
+                    "Asset Group Summary is unavailable because the bundled "
+                    "snapshot file is not present."
+                )
+
+        except Exception as error:
+            st.error(f"Could not load the bundled Asset Group Summary: {error}")
+
+
+# Prepare formatted price values for the detailed Asset Snapshot.
+def format_asset_price(value, asset_type):
+    """Format displayed asset prices using asset-sensitive decimal precision."""
+
+    if pd.isna(value):
+        return ""
+
+    numeric_value = float(value)
+    asset_type_normalised = str(asset_type).strip().lower()
+
+    if asset_type_normalised in {
+        "cryptocurrency",
+        "cryptocurrencies",
+        "crypto",
+    }:
+        if abs(numeric_value) >= 100:
+            return f"{numeric_value:.2f}"
+        if abs(numeric_value) >= 1:
+            return f"{numeric_value:.4f}"
+        return f"{numeric_value:.6f}"
+
+    if asset_type_normalised in {
+        "currencies",
+        "currency",
+        "forex",
+        "fx",
+    }:
+        return f"{numeric_value:.4f}"
+
+    return f"{numeric_value:.2f}"
+
+
+last_price_display = format_asset_price(last_price, ASSET_TYPE)
+max_price_display = format_asset_price(max_price, ASSET_TYPE)
+min_price_display = format_asset_price(min_price, ASSET_TYPE)
+high_price_display = format_asset_price(high_price, ASSET_TYPE)
+low_price_display = format_asset_price(low_price, ASSET_TYPE)
 
 # --- Asset Snapshot ---
 with overview_tab1:
@@ -447,16 +613,16 @@ with overview_tab1:
     **Current Data Set**: {DATA_TITLE}<br>
     **Asset Type**: {asset_type_display}<br>
     **Analysed Period**: {start_date} to {end_date}<br><br>
-    **Last Price**: {last_price:.2f}<br>
+    **Last Price**: {last_price_display}<br>
     :gray[*(Most recent closing price.)*]<br><br>
     **Days Since Bear Market**: {days_since_bear_market} days<br>
     :gray[*(Days since a 20%+ decline from the high.)*]<br><br>
     **Current Drawdown**: {current_drawdown:.2f}%<br>
     :gray[*(Drop from peak to current price.)*]<br><br>
-    **Max Price**: {max_price:.2f} on {max_price_date.strftime('%m/%d/%Y')}<br>
-    **Min Price**: {min_price:.2f} on {min_price_date.strftime('%m/%d/%Y')}<br>
-    **High Price**: {high_price:.2f} on {high_price_date.strftime('%m/%d/%Y')}<br>
-    **Low Price**: {low_price:.2f} on {low_price_date.strftime('%m/%d/%Y')}<br>
+    **Max Price**: {max_price_display} on {max_price_date.strftime('%m/%d/%Y')}<br>
+    **Min Price**: {min_price_display} on {min_price_date.strftime('%m/%d/%Y')}<br>
+    **High Price**: {high_price_display} on {high_price_date.strftime('%m/%d/%Y')}<br>
+    **Low Price**: {low_price_display} on {low_price_date.strftime('%m/%d/%Y')}<br>
     """, unsafe_allow_html=True)
 
 # --- Key Metrics ---
@@ -670,9 +836,14 @@ st.markdown("<hr>", unsafe_allow_html=True)  # Divider for better separation
 # ─────────────────────────────────────────────────────────────────────────────
 # Statistical Analysis Options
 # ─────────────────────────────────────────────────────────────────────────────
-st.header('Statistical Analysis')
+st.header("Statistical Analysis")
 
-with st.expander("ℹ️ Help: How to"):
+st.write(
+    "Examine the selected asset through distribution, volatility, performance, "
+    "risk, relationship, and visual measures."
+)
+
+with st.expander("ℹ️ How to Interpret Statistical Analysis"):
     content = load_markdown_file(HELP_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -885,8 +1056,14 @@ for header, (options_map, categories) in options_maps.items():
                 "Volatility with User Uploads",
             }
 
-            if selected_option in correlation_mapping or selected_option in volatility_mapping or selected_option in DISABLED:
-                st.info("Correlation and volatility overlays are not included in the public preview.")
+            if (
+                selected_option in correlation_mapping
+                or selected_option in volatility_mapping
+                or selected_option in DISABLED
+            ):
+                st.info(
+                    "Cross-asset correlation and volatility overlays are not available in the online version."
+                )
                 continue
 
             # Correlation Options
@@ -1098,8 +1275,13 @@ for header, (options_map, categories) in options_maps.items():
         for selected_option in all_selected_options:
 
             # Preview: disable returns overlays & user-upload returns
-            if selected_option in returns_mapping or selected_option == "Returns with User Uploads":
-                st.info("Returns overlays (cross-asset and uploads) are not included in the public preview.")
+            if (
+                selected_option in returns_mapping
+                or selected_option == "Returns with User Uploads"
+            ):
+                st.info(
+                    "Cross-asset and uploaded-data returns overlays are not available in the online version."
+                )
                 continue
 
             # Price Movement & Trend Visualisation (only for Range and Event-Driven)
@@ -1359,24 +1541,6 @@ asset_snapshot_insight = {
 }
 
 # -------------------------------------------------------------------------------------------------
-# About & Support
-# -------------------------------------------------------------------------------------------------
-with st.sidebar.expander("ℹ️ About & Support"):
-    support_md = load_markdown_file(ABOUT_SUPPORT_MD)
-    if support_md:
-        st.markdown(support_md, unsafe_allow_html=True)
-
-# -------------------------------------------------------------------------------------------------
-# Footer
-# -------------------------------------------------------------------------------------------------
-st.divider()
-
-st.caption(
-    "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — \
-    No trading, investment, or policy advice provided."
-)
-
-# -------------------------------------------------------------------------------------------------
 # Sidebar options using multiselect
 # -------------------------------------------------------------------------------------------------
 st.sidebar.header("Data Inspection")
@@ -1399,3 +1563,20 @@ if 'Filtered Data' in sidebar_data_options:
         or event-based analysis filters."
     )
     st.dataframe(filtered_df)  # Show filtered data
+
+# -------------------------------------------------------------------------------------------------
+# About & Support
+# -------------------------------------------------------------------------------------------------
+st.sidebar.divider()
+with st.sidebar.expander("ℹ️ About & Support"):
+    support_md = load_markdown_file(ABOUT_SUPPORT_MD)
+    if support_md:
+        st.markdown(support_md, unsafe_allow_html=True)
+
+# -------------------------------------------------------------------------------------------------
+# Footer
+# -------------------------------------------------------------------------------------------------
+st.caption(
+    "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — \
+    No trading, investment, or policy advice provided."
+)

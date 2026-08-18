@@ -1,16 +1,25 @@
-## Market & Volatility Scanner
+The **Market & Volatility Scanner** provides market-level scanning and asset-level statistical analysis within the Trade & Portfolio Structuring environment.
 
-The **Market & Volatility Scanner** module provides a multi-layered scan of asset conditions, focusing on volatility, statistical outliers, and return distribution diagnostics. It is designed to flag assets exhibiting unusual market behaviour or signal properties relevant to structured trade planning.
+The module combines two complementary views of market behaviour.
 
-### Key functions include:
+###### Market & Volatility Scan
 
-- Return, volatility, and momentum diagnostics
-- Distribution shape and deviation metrics
-- Relative positioning vs sector or index benchmarks
-- Structural signal detection for trade filtering or exclusion
+Explore available assets across selected categories and periods using price movement, return, volatility, momentum, and related market measures.
 
-Outputs are compatible with downstream modules for timing confirmation, trade setup, and portfolio allocation.
+The scan provides a comparative view of how asset behaviour differs across the selected universe.
 
-### ⚠️ No investment advice or recommendations are provided
+###### Statistical Analysis
 
-This module supports structured planning and diagnostic exploration. Interpretive judgement, scenario assumptions, and execution decisions remain the responsibility of the end user. No trading signals or investment recommendations are produced by this system.
+Select an individual asset to examine its historical characteristics in greater detail.
+
+Available analysis includes:
+
+- descriptive and distribution statistics,
+- volatility and uncertainty measures,
+- historical performance,
+- risk-adjusted measures,
+- price and return behaviour,
+- correlations and related market relationships,
+- and statistical visualisations.
+
+The scanner presents historical and statistical characteristics without determining whether an asset or market condition is favourable or unfavourable.

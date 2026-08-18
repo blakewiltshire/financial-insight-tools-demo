@@ -24,7 +24,7 @@ Example:
 # -------------------------------------------------------------------------------------------------
 # Imports: Ensure underlying mapping dictionaries are available
 # -------------------------------------------------------------------------------------------------
-from data_sources.financial_data.mapped_financial_data_loaders import (
+from apps.data_sources.financial_data.mapped_financial_data_loaders import (
     correlation_data_mapping,
     returns_data_mapping,
     volatility_data_mapping,

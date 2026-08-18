@@ -1,0 +1,6 @@
+﻿Company,Ticker,Trailing_PE,Forward_PE,Revenue_Growth_Pct,Operating_Margin_Pct,Short_Interest_Pct,PE_Spread
+Ferrari,RACE,33.14,30.77,3,28.76,1.56,2.37
+Aston Martin,AML,NaN,NaN,16,NaN,NaN,NaN
+Porsche AG,P911,140,NaN,NaN,7.66,NaN,NaN
+Mercedes-Benz,MBG,6.79,9.1,-4.9,6.65,NaN,-2.31
+Lucid Group,LCID,NaN,NaN,20.2,NaN,33.47,NaN

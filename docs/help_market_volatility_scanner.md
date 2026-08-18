@@ -1,121 +1,126 @@
-## How-To Interpret Statistical Analysis Results
+The **Statistical Analysis** section provides a detailed view of the selected asset using historical price, return, volatility, performance, and relationship measures.
 
-The **Statistical Analysis** module within the Market & Volatility Scanner presents a rich, multidimensional profile of the selected asset. It surfaces descriptive properties, performance metrics, risk-adjusted measures, and intermarket relationships to help identify noteworthy conditions or structural anomalies — not to issue direct signals.
+Each measure describes a different characteristic of the selected data. Results depend on the selected asset, period, frequency, and available observations.
 
-The data provided is structured to support:
+###### Descriptive Statistics
 
-- **Situational awareness** of current asset characteristics
-- **Comparative positioning** across market types or timeframes
-- **Alignment and contradiction checks** against other modules (e.g., price action, correlation, macro)
+Descriptive statistics summarise the historical distribution of the selected asset.
 
-Below is a breakdown of the analysis sections available:
+- **Mean:** The arithmetic average of the observations.
+- **Median:** The midpoint of the observations when ordered by value.
+- **Mode:** The most frequently occurring value where one can be identified.
+- **Standard Deviation:** The dispersion of observations around their mean.
+- **Variance:** The squared dispersion of observations around their mean.
+- **Range:** The difference between the highest and lowest observations.
+- **Skewness:** The degree of asymmetry within the distribution.
+- **Kurtosis:** The shape of the distribution with particular sensitivity to its tails.
+- **Minimum / Maximum:** The lowest and highest observations in the selected sample.
+- **Count:** The number of observations included in the calculation.
+- **Frequency Distribution:** A visual representation of how observations are distributed across value ranges.
 
----
+Read these measures together to understand the centre, dispersion, shape, and range of the historical sample.
 
-### Descriptive Statistics
+###### Risk & Uncertainty Analysis
 
-These establish the foundational distributional properties of the asset’s return and price behaviour.
+These measures describe historical risk characteristics and modelled price behaviour.
 
-- **Measure of Central Tendency**: Mean, median, and mode — offer insight into average behaviour.
-- **Measures of Dispersion**: Standard deviation, variance, and range — reflect volatility and uncertainty.
-- **Measures of Shape**: Skewness and kurtosis — reveal asymmetry and tail risk.
-- **Basic Statistics**: Min, max, count — quick reference for historical extremes.
-- **Frequency Distribution**: Visual breakdown of how returns are distributed over time.
+- **Monte Carlo Simulation:** Generates multiple modelled price paths using assumptions derived from the selected historical data. The resulting paths represent simulated outcomes rather than forecasts.
+- **Sharpe Ratio:** Relates historical excess return to total return variability.
+- **Sortino Ratio:** Relates historical excess return to downside variability.
+- **Probability of Hitting DPT:** Estimates how frequently a defined price threshold may be reached under the assumptions used by the model.
 
-*Use Case*: Understand historical behaviour to frame expectations and detect anomalies.
+Modelled probabilities and simulations depend on their inputs and assumptions. They do not establish the probability of a future market outcome.
 
----
+###### Market Dynamics
 
-### Risk & Uncertainty Analysis
+Market-dynamics measures describe how price variability and trading ranges have behaved through time.
 
-These modules translate market behaviour into uncertainty-adjusted outcomes.
+- **Volatility Ratio:** Compares shorter-term and longer-term volatility measures.
+- **Average True Range (ATR):** Measures the typical trading range while accounting for gaps between periods.
 
-- **Monte Carlo Simulations**: Projects a range of future price paths based on historical volatility.
-- **Risk-Adjusted Returns (Sharpe Ratio)**: Reward per unit of total risk.
-- **Downside Risk Measure (Sortino Ratio)**: Reward per unit of downside-only risk.
-- **Probability of Hitting DPT**: Likelihood of reaching a defined price target.
+Changes in these measures show how the magnitude and variability of price movement differ across the selected historical periods.
 
-*Use Case*: Assess potential reward vs. risk and explore price path distributions.
+###### Performance Analysis
 
----
+Performance measures describe the historical return and drawdown characteristics of the selected asset.
 
-### Market Dynamics
+- **Annualised Return:** Expresses historical return on an annualised basis.
+- **Maximum Drawdown:** Measures the largest peak-to-trough decline within the selected sample.
+- **Volatility-Adjusted Return:** Places historical return alongside the variability experienced in producing it.
+- **Return on Investment (ROI):** Measures the change in value relative to the starting value used by the calculation.
+- **Volume vs ATR Correlation:** Measures historical co-movement between trading volume and Average True Range.
 
-These track evolving volatility and intra-asset behaviour.
+Performance measures describe the selected historical period and may differ materially when the period or data frequency changes.
 
-- **Volatility Ratio**: Compares short-term to long-term volatility to assess regime change.
-- **ATR (Average True Range)**: Measures typical price movement magnitude — often used to size stops or targets.
+###### Correlation & Relationships
 
-*Use Case*: Detect shifts in market environment or underlying asset temperament.
+Correlation measures describe the historical degree and direction of co-movement between the selected asset and other available series.
 
----
+Available comparisons may include:
 
-### Performance Metrics & Correlations
+- market indices,
+- currencies,
+- cryptocurrencies,
+- commodities,
+- ETFs,
+- short- and long-term bonds,
+- and user-provided data where available.
 
-This area dissects how the asset has performed historically and in relation to key macro groupings.
+A positive correlation indicates that two series have tended to move in the same direction, while a negative correlation indicates that they have tended to move in opposite directions.
 
-#### Performance Analysis
+A correlation near zero indicates limited linear co-movement within the selected sample.
 
-- **Annualised Return**, **Maximum Drawdown**, **Volatility-Adjusted Return**, **Return on Investment (ROI)**, **Volume vs ATR Correlation**.
+**Correlation does not establish causation, economic dependence, or persistence of the relationship.**
 
-*Use Case*: Evaluate total return characteristics, peak losses, and volume-led movement.
+###### Volatility Relationships
 
-#### Correlation & Causation Analysis
+Volatility comparisons examine how changes in the variability of the selected asset have co-moved with changes in the variability of other series.
 
-Examines historical relationships with external asset groups.
+These views use the same broad asset groupings available within the relationship analysis but focus on volatility rather than price or return direction.
 
-- **Correlation with...**: Major indices, FX pairs, crypto, commodities, ETFs (by theme and geography), and bonds (short/long).
-- **Correlation with User Uploads**: Enables direct cross-check with user data.
+A relationship between volatility measures describes historical co-movement in variability. It does not establish that volatility in one asset causes volatility in another.
 
-*Use Case*: Identify directional comovement, hedging candidates, or systemic exposure.
+###### Price Movement & Trend
 
-📍 *Reminder*: Correlation ≠ causation. High correlation may indicate relationship, not influence.
+The visualisation panels provide different representations of historical price behaviour.
 
----
+- **Line:** Shows price movement through time.
+- **Candlestick:** Displays open, high, low, and close information where available.
+- **Trend / Area:** Provides an alternative visual representation of price direction and magnitude.
 
-### Volatility & Opportunity Mapping
+These views present the same underlying historical series through different visual structures.
 
-These modules extend correlation logic into volatility space — mapping the co-behaviour of uncertainty.
+###### Returns
 
-- **Volatility with...**: Same groupings as above, focused on standard deviation movement patterns.
+Return views describe changes in value through time.
 
-*Use Case*: Discover which assets share volatility shocks — useful in stress tests or regime shifts.
+- **Returns with Other Series:** Compares return behaviour across the selected asset and another available series.
+- **Cumulative Returns:** Shows the compounded progression of historical returns across the selected period.
+- **Rolling Returns:** Calculates returns repeatedly across a moving historical window.
 
----
+The selected period and rolling-window length affect the relationships and patterns displayed.
 
-### Data Visualisation Panels
+##### Risk-Return & DPT Views
 
-Enables quick diagnostic through visual overlays.
+These panels place selected statistical measures alongside one another.
 
-#### Price Movement & Trend
+- **Risk-Return Grid:** Displays historical return relative to historical variability.
+- **DPT vs Volatility:** Places the defined DPT measure alongside the volatility characteristics used within the analysis.
 
-- **Line**, **Candlestick**, and **Trend (Area)** views to inspect recent price dynamics.
+Position within these views describes the selected historical data and calculation settings rather than assigning an asset a qualitative category or outcome.
 
-#### Returns
+###### Reading the Analysis Together
 
-- **Returns with...** (by group) — tracks performance alignment.
-- **Cumulative Returns**, **Rolling Returns** — explore compounding and momentum.
+The Statistical Analysis measures describe different dimensions of the selected asset:
 
-#### Risk-Return & Opportunity
+- **Distribution measures** describe the centre, dispersion, and shape of historical observations.
+- **Volatility measures** describe the magnitude and variability of price movement.
+- **Performance measures** describe historical returns and drawdowns.
+- **Risk-adjusted measures** place historical return alongside different measures of variability.
+- **Relationship measures** describe historical co-movement with other available series.
+- **Simulations and probability measures** describe modelled outcomes under defined assumptions.
+- **Visualisations** provide alternative views of the underlying historical data.
 
-- **Risk-Return Grid**: Plots trade-off between average return and volatility.
-- **DPT vs Volatility**: Shows how often an asset reaches a defined price threshold in relation to its volatility regime.
+Measures may reinforce, differ from, or change relative to one another as the asset, period, frequency, comparison series, or model settings change.
 
-*Use Case*: Spot asset behaviour profiles — stable performers, high-risk movers, or breakout candidates.
-
----
-
-### Interpretation Summary
-
-- These metrics are **not recommendations**.
-- They support **framing, filtering, and hypothesis generation**.
-- Used together, they help identify:
-  - Statistical outliers
-  - Structural shifts in volatility
-  - Alignment with external markets
-  - Changing risk-reward asymmetries
-
-
-### ⚠️ No investment advice or recommendations are provided
-
-This module supports structured planning and diagnostic exploration. Interpretive judgement, scenario assumptions, and execution decisions remain the responsibility of the end user. No trading signals or investment recommendations are produced by this system.
+The analysis describes the selected historical sample and model assumptions. It does not determine whether an asset, relationship, or market condition is favourable or unfavourable.

@@ -1,0 +1,12 @@
+﻿Company,Ticker,Trailing_PE,Forward_PE,Revenue_Growth_Pct,Operating_Margin_Pct,Short_Interest_Pct,PE_Spread
+Boeing Co (Industrials),BA,107.59,833.33,NaN,2.8,NaN,-725.74
+Coca-Cola (Consumer Staples),KO,25.98,24.07,12,33.37,NaN,1.91
+Exxon Mobil (Energy),XOM,25.11,13.55,NaN,NaN,NaN,11.56
+Home Depot (Consumer Discretionary),HD,23.32,20.88,3.5,12.5,NaN,2.44
+Linde Plc (Materials),LIN,34.21,28.33,NaN,26.17,NaN,5.88
+NextEra Energy Inc (Utilities),NEE,21.5,21.55,NaN,NaN,NaN,-0.05
+Oracle Corp (Technology),ORCL,32.16,26.6,NaN,NaN,NaN,5.56
+Pfizer (Health Care),PFE,19.62,8.87,NaN,12.01,2.87,10.75
+Prologis Inc (Real Estate),PLD,37.17,23.88,6.9,NaN,1.45,13.29
+Visa (Financials),V,28.08,22.17,NaN,61.48,NaN,5.91
+Walt Disney Company (Communications),DIS,15.98,13.35,NaN,NaN,NaN,2.63

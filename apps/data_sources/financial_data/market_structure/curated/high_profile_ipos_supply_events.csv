@@ -1,0 +1,15 @@
+Company,Ticker,Event_Type,Event_Date,Event_Label,Portion_Unlocked_Pct,Condition,Source_Note
+SpaceX,SPCX,Q2 Earnings Release,Late Aug 2026,Q2 release,20,Second full trading day after results,Publicly reported lock-up schedule and market reporting
+SpaceX,SPCX,Performance Trigger,Late Aug 2026,Performance trigger,10,If price is at least 30% above IPO price,Publicly reported lock-up schedule and market reporting
+SpaceX,SPCX,Time-Based Tranche,2026-08-21,Time-based tranche 1,7,70 days post-IPO,Publicly reported lock-up schedule and market reporting
+SpaceX,SPCX,Time-Based Tranche,2026-09-10,Time-based tranche 2,7,90 days post-IPO,Publicly reported lock-up schedule and market reporting
+SpaceX,SPCX,Time-Based Tranche,2026-09-25,Time-based tranche 3,7,105 days post-IPO,Publicly reported lock-up schedule and market reporting
+SpaceX,SPCX,Time-Based Tranche,2026-10-10,Time-based tranche 4,7,120 days post-IPO,Publicly reported lock-up schedule and market reporting
+SpaceX,SPCX,Time-Based Tranche,2026-10-25,Time-based tranche 5,7,135 days post-IPO,Publicly reported lock-up schedule and market reporting
+SpaceX,SPCX,Q3 Earnings Release,Mid Nov 2026,Q3 release,28,Second full trading day after results,Publicly reported lock-up schedule and market reporting
+SpaceX,SPCX,Final Expiry,2026-12-09,Final expiry,Remainder,Approximate 180-day full release,Publicly reported lock-up schedule and market reporting
+Arm Holdings,ARM,Lock-Up Expiry,Mar 2024,180-day lock-up expiry,,Strategic shareholder lock-up expiry,Historical market reporting
+Reddit,RDDT,Insider Sale Window,Sept 2024,First major insider sale window,,Post-IPO insider liquidity window,Historical market reporting
+Coinbase,COIN,Direct Listing,2021-04-14,Immediate insider liquidity,,No traditional lock-up,Direct listing structure
+Circle,CRCL,Lock-Up Expiry,Nov 2025,Post-IPO lock-up expiry,,Post-IPO lock-up expiry,Historical market reporting
+Rivian,RIVN,Strategic Shareholder Sale,May 2022,Ford/Amazon partial sales,,Strategic shareholder partial sales,Historical market reporting

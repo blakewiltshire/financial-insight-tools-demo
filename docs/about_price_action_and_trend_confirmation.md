@@ -1,16 +1,18 @@
-## Price Action & Trend Confirmation
+The **Price Action & Trend Confirmation** module examines recent price structure, trend behaviour, and selected technical patterns for the chosen asset.
 
-The **Price Action & Trend Confirmation** module analyses the technical structure of an asset's recent behaviour. It identifies breakout zones, trend strength, and potential reversal points to validate trade scenarios under consideration.
+It provides a structured view of how price has behaved across trend, support and resistance, consolidation, breakout, and exhaustion measures.
 
-### Key functions include:
+###### Review Areas
 
-- Detection of breakout and consolidation patterns
-- Trend scoring via slope, consistency, and price structure
-- Analysis of support, resistance, and exhaustion levels
-- Overlay diagnostics for short-term confirmation vs long-term trend
+The module can include:
 
-Designed for use in conjunction with trade structuring or timing modules, this tool emphasises scenario clarity rather than predictive interpretation.
+- trend slope and consistency,
+- price structure,
+- support and resistance levels,
+- consolidation and breakout zones,
+- exhaustion and reversal-related observations,
+- and short- and longer-term technical overlays.
 
-### ⚠️ No investment advice or recommendations are provided
+These measures describe observed price behaviour within the selected historical context. They do not determine whether a breakout, reversal, continuation, or other future outcome will occur.
 
-This module supports structured planning and diagnostic exploration. Interpretive judgement, scenario assumptions, and execution decisions remain the responsibility of the end user. No trading signals or investment recommendations are produced by this system.
+Price Action & Trend Confirmation presents technical structure for review. It does not generate trade signals, predict price direction, or determine execution decisions.

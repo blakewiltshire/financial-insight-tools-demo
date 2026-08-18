@@ -1,0 +1,16 @@
+Symbol	Select Sector SPDR Fund
+
+SPY	S&P 500
+XLC	Communication Services
+XLY	Consumer Discretionary
+XLP	Consumer Staples
+XLE	Energy
+XLF	Financials
+XLV	Health Care
+XLI	Industrials
+XLB	Materials
+XLRE	Real Estate
+XLK	Technology
+XLU	Utilities
+
+SPY ETF Stock Price History.csvXLB ETF Stock Price History.csvXLC ETF Stock Price History.csvXLE ETF Stock Price History.csvXLF ETF Stock Price History.csvXLI ETF Stock Price History.csvXLK ETF Stock Price History.csvXLP ETF Stock Price History.csvXLRE ETF Stock Price History.csvXLU ETF Stock Price History.csvXLV ETF Stock Price History.csvXLY ETF Stock Price History.csv

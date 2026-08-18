@@ -71,18 +71,16 @@ BRAND_LOGO_PATH = os.path.join(ROOT_PATH, "brand", "blake_logo.png")
 # -------------------------------------------------------------------------------------------------
 # Clean and format Single Asset Files
 # -------------------------------------------------------------------------------------------------
-from data_sources.financial_data.processing_default import (
+from apps.data_sources.financial_data.processing_default import (
     load_data_from_file, load_asset_data, clean_data, resample_data
 )
-from data_sources.financial_data.shared_utils import convert_date_to_us_format
+from apps.data_sources.financial_data.shared_utils import convert_date_to_us_format
 
 # -------------------------------------------------------------------------------------------------
 # Mapping Logic
 # -------------------------------------------------------------------------------------------------
-from data_sources.financial_data.preloaded_assets import get_preloaded_assets
-from data_sources.financial_data.user_preloaded_assets import get_user_preloaded_assets
-from data_sources.financial_data.asset_map import get_asset_path
-from data_sources.financial_data.user_asset_map import get_user_asset_path
+from apps.data_sources.financial_data.preloaded_assets import get_preloaded_assets
+from apps.data_sources.financial_data.asset_map import get_asset_path
 
 # -------------------------------------------------------------------------------------------------
 # Use Cases
@@ -113,7 +111,7 @@ from use_cases.trade_timing_charting import (
 # -------------------------------------------------------------------------------------------------
 # Filtering Options (Ranges, Events and Temporal)
 # -------------------------------------------------------------------------------------------------
-from data_sources.financial_data.filtering_options import filtering_options_map
+from apps.data_sources.financial_data.filtering_options import filtering_options_map
 # from extensions.filtering_options import filtering_options_map
 
 # -------------------------------------------------------------------------------------------------
@@ -129,12 +127,16 @@ from data_sources.financial_data.filtering_options import filtering_options_map
 # -------------------------------------------------------------------------------------------------
 st.set_page_config(page_title="Trade Timing & Confirmation", layout="wide")
 st.title('Trade Timing & Confirmation')
-st.caption("*Evaluate breakout potential, trend strength, and institutional sentiment.*")
+st.caption(
+    "*Examine momentum, trend, alignment, and timing conditions across the selected asset.*"
+)
 
-# -------------------------------------------------------------------------------------------------
-# Load About Markdown (auto-skips if not replaced)
-# -------------------------------------------------------------------------------------------------
-with st.expander("ℹ️ About This App"):
+st.write(
+    "Review technical measures associated with momentum, trend, crossover, "
+    "divergence, and exhaustion within the selected historical context."
+)
+
+with st.expander("ℹ️ About Trade Timing & Confirmation"):
     content = load_markdown_file(ABOUT_APP_MD)
     if content:
         st.markdown(content, unsafe_allow_html=True)
@@ -142,82 +144,162 @@ with st.expander("ℹ️ About This App"):
         st.error("File not found: docs/about_trade_timing_and_confirmation.md")
 
 # -------------------------------------------------------------------------------------------------
-# Start Sidebar Operations
+# Sidebar
 # -------------------------------------------------------------------------------------------------
+if os.path.isfile(BRAND_LOGO_PATH):
+    st.logo(BRAND_LOGO_PATH)  # pylint: disable=no-member
 
-# -------------------------------------------------------------------------------------------------
-# Navigation Sidebar
-# Allows navigation across numbered subpages in /pages/
-# Uses `build_sidebar_links()` to list only structured pages (e.g., 100_....py)
-# Also links back to app dashboard (e.g., app.py)
-# -------------------------------------------------------------------------------------------------
 st.sidebar.title("📂 Navigation Menu")
-st.sidebar.page_link('app.py', label='Financial Insight Tools — Examine')
+st.sidebar.page_link("app.py", label="Financial Insight Tools — Examine")
+
 for path, label in build_sidebar_links():
     st.sidebar.page_link(path, label=label)
-
-st.sidebar.divider()
-
-# -------------------------------------------------------------------------------------------------
-# Branding
-# -------------------------------------------------------------------------------------------------
-st.logo(BRAND_LOGO_PATH) # pylint: disable=no-member
 
 # -------------------------------------------------------------------------------------------------
 # Asset Selection
 # -------------------------------------------------------------------------------------------------
-st.sidebar.title('Select Asset for Trade Timing')
+st.sidebar.divider()
+st.sidebar.title('Select Asset')
 
-# --- Uploaded Asset Defaults ---
-UPLOADED_FILE = None
-DATA_TITLE = ''  # Default title is empty, no predefined title
-ASSET_TYPE = ""  # Default asset type is empty, needs to be selected
-
-# --- Data source method ---
-data_source = st.sidebar.selectbox(
-    'Choose your data source',
-    ['Preloaded Asset Types (Default)']
+data_source = st.sidebar.radio(
+    "Choose your data source",
+    ["Preloaded Assets", "Upload My Own Data"],
 )
 
-# --- Preloaded Assets ---
-preloaded_assets_default = get_preloaded_assets()
-preloaded_assets_user = get_user_preloaded_assets()
+processed_df = None
+DATA_TITLE = ""
+ASSET_TYPE = ""
 
-asset_path = None
-uploaded_file = None
+if data_source == "Upload My Own Data":
+    st.sidebar.caption(
+        "Preferred fields: `date`, `open`, `high`, `low`, `close`, `volume`."
+    )
 
-# --- Default Preloaded Assets ---
-if data_source == 'Preloaded Asset Types (Default)':
-    asset_category = st.sidebar.selectbox("Select Asset Category", list(preloaded_assets_default.keys()))
-    asset_sample = st.sidebar.selectbox("Select Base Asset", preloaded_assets_default[asset_category])
-    if asset_sample:
-        DATA_TITLE = asset_sample
-        ASSET_TYPE = asset_category
-        asset_path = get_asset_path(asset_category, asset_sample)
+    template_csv = (
+        "date,open,high,low,close,volume\n"
+        "2026-08-10,100.00,103.00,99.00,102.00,1250000\n"
+        "2026-08-11,102.00,104.50,101.00,103.50,1425000\n"
+        "2026-08-12,103.50,105.00,102.50,104.00,1310000\n"
+    )
+
+    st.sidebar.download_button(
+        "Download Example CSV",
+        data=template_csv,
+        file_name="price_action_historical_data_example.csv",
+        mime="text/csv",
+    )
+
+    uploaded_file = st.sidebar.file_uploader(
+        "Upload historical data",
+        type="csv",
+        key="price_action_upload",
+    )
+
+    if uploaded_file is None:
+        st.info("Upload a historical price file to begin Price Action analysis.")
+        st.stop()
+
+    try:
+        processed_df = load_data_from_file(uploaded_file)
+        processed_df, dataset_info = clean_data(processed_df)
+    except (ValueError, TypeError, KeyError, pd.errors.ParserError) as exc:
+        st.error(f"Unable to read the uploaded data: {exc}")
+        st.stop()
+
+    DATA_TITLE = os.path.splitext(uploaded_file.name)[0]
+    ASSET_TYPE = "User Upload"
+
+else:
+    preloaded_assets_default = get_preloaded_assets()
+
+    if not preloaded_assets_default:
+        st.error("No preloaded FIT assets are currently available.")
+        st.stop()
+
+    asset_category = st.sidebar.selectbox(
+        "Asset Category",
+        list(preloaded_assets_default.keys()),
+    )
+
+    category_assets = preloaded_assets_default.get(asset_category, [])
+
+    if not category_assets:
+        st.error(f"No assets are available in the selected category: {asset_category}.")
+        st.stop()
+
+    asset_sample = st.sidebar.selectbox(
+        "Select Asset",
+        category_assets,
+    )
+
+    if not asset_sample:
+        st.info("Select an asset to begin Price Action analysis.")
+        st.stop()
+
+    asset_path = get_asset_path(asset_category, asset_sample)
+
+    try:
+        processed_df = load_data_from_file(asset_path)
+        processed_df, dataset_info = clean_data(processed_df)
+    except (ValueError, TypeError, KeyError, pd.errors.ParserError) as exc:
+        st.error(f"Unable to load the selected FIT asset: {exc}")
+        st.stop()
+
+    DATA_TITLE = asset_sample
+    ASSET_TYPE = asset_category
+
+# Validate the core fields used across Price Action views.
+required_fields = ["date", "open", "high", "low", "close"]
+missing_fields = [
+    field for field in required_fields
+    if field not in processed_df.columns
+]
+
+if missing_fields:
+    st.error(
+        "Price Action analysis requires the following core fields: "
+        "`date`, `open`, `high`, `low`, `close`. "
+        f"Missing: {', '.join(missing_fields)}."
+    )
+    st.stop()
+
+processed_df = processed_df.copy()
+processed_df["date"] = pd.to_datetime(processed_df["date"], errors="coerce")
+
+for column in ["open", "high", "low", "close"]:
+    processed_df[column] = pd.to_numeric(processed_df[column], errors="coerce")
+
+if "volume" in processed_df.columns:
+    processed_df["volume"] = pd.to_numeric(processed_df["volume"], errors="coerce")
+
+processed_df = (
+    processed_df
+    .dropna(subset=["date", "open", "high", "low", "close"])
+    .sort_values("date")
+    .drop_duplicates(subset=["date"], keep="last")
+    .reset_index(drop=True)
+)
+
+if processed_df.empty:
+    st.error("No valid historical observations remain after data preparation.")
+    st.stop()
+
+# Some indicators use volume. Keep the module available when volume is absent,
+# but make that limitation explicit rather than rejecting the complete dataset.
+if "volume" not in processed_df.columns or processed_df["volume"].dropna().empty:
+    st.sidebar.warning(
+        "Volume data is unavailable. Volume-based indicators may not produce output."
+    )
+
+st.sidebar.caption(
+    f"Loaded: **{DATA_TITLE}** · {len(processed_df):,} observations"
+)
 
 # --- Predisposition (trade direction) ---
-predisposition = st.sidebar.radio("Trade Bias", ["Bullish", "Bearish"])
-
-try:
-    if data_source == 'Upload my own files':
-        if uploaded_file is not None:
-            processed_df = load_data_from_file(uploaded_file)
-        else:
-            st.info("Please upload a CSV file.")
-            st.stop()  # Ensures we halt until a valid file is uploaded
-
-    elif data_source.startswith('Preloaded') and asset_path:
-        processed_df = load_data_from_file(asset_path)
-
-    else:
-        processed_df = load_data_from_file(DEFAULT_FILE)
-        DATA_TITLE = DEFAULT_TITLE
-        ASSET_TYPE = DEFAULT_ASSET_TYPE
-
-    processed_df, dataset_info = clean_data(processed_df)
-
-except KeyError as e:
-    st.error(f"Missing key column: {e}")
+predisposition = st.sidebar.radio(
+    "Trade Bias",
+    ["Bullish", "Bearish"],
+)
 
 # -------------------------------------------------------------------------------------------------
 # Filter Selection
@@ -631,6 +713,7 @@ st.divider()
 # -------------------------------------------------------------------------------------------------
 # About & Support
 # -------------------------------------------------------------------------------------------------
+st.sidebar.divider()
 with st.sidebar.expander("ℹ️ About & Support"):
     support_md = load_markdown_file(ABOUT_SUPPORT_MD)
     if support_md:
@@ -640,8 +723,6 @@ with st.sidebar.expander("ℹ️ About & Support"):
 # -------------------------------------------------------------------------------------------------
 # Footer
 # -------------------------------------------------------------------------------------------------
-st.divider()
-
 st.caption(
     "© 2026 Blake Media Ltd. | Financial Insight Tools by Blake Wiltshire — \
     No trading, investment, or policy advice provided."

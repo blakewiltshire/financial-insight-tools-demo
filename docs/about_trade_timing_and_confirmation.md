@@ -1,16 +1,17 @@
-## Trade Timing & Confirmation
+The **Trade Timing & Confirmation** module examines technical conditions associated with the selected asset across momentum, trend, and timing measures.
 
-The **Trade Timing & Confirmation** module evaluates technical alignment prior to trade initiation. It assesses confluence between price action, momentum signals, and trend consistency to support structurally disciplined entry decisions.
+It provides a structured view of how those measures align or diverge within the selected historical context.
 
-### Key components include:
+###### Review Areas
 
-- Cross-verification of multiple timing signals (e.g. RSI, MACD, EMA crossover)
-- Confluence scoring to evaluate strength of alignment
-- Divergence and exhaustion detection
-- Optional tagging of setups for trade planning
+The module can include:
 
-This module supports decision-readiness without simulating execution or making directional forecasts.
+- RSI, MACD, and moving-average measures,
+- trend and momentum conditions,
+- crossover and alignment measures,
+- divergence and exhaustion observations,
+- and setup tags where available.
 
-### ⚠️ No investment advice or recommendations are provided
+The measures describe the selected technical conditions rather than determining whether an entry should be taken or whether a particular market direction will follow.
 
-This module supports structured planning and diagnostic exploration. Interpretive judgement, scenario assumptions, and execution decisions remain the responsibility of the end user. No trading signals or investment recommendations are produced by this system.
+Trade Timing & Confirmation presents technical context for review. It does not generate trade signals, predict price direction, or determine execution decisions.
